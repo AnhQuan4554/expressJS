@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Register from "./component/register/index";
 import Sigin from "./component/signin/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageHome from "./component/Home/index";
+import PostChildren from "./component/pageChildren/PostChildren";
+import Post_manager from "./component/Home/Post_manager";
+import Overview from "./component/Home/Overview";
+import Location from "./component/Home/Location";
+import Reward from "./component/Home/Reward";
+import Payment from "./component/Home/Payment";
 function App() {
+  const [index, setIndex] = useState(0);
   return (
     <>
       <Routes>
-        <Route path="/" element={<PageHome />} />
-        <Route path="/Signin" element={<Sigin />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/" element={<PageHome index={index} />} />
+        <Route path="/signin" element={<Sigin />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/postChildren" element={<PostChildren />} />
+        <Route path="/post_manager" element={<Post_manager />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/reward" element={<Reward />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </>
     // <div className="App">

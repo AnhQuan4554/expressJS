@@ -103,7 +103,7 @@ const index = () => {
     }
   };
   return (
-    <S_Register>
+    <S_Register style={{ overflow: `hidden` }}>
       <img style={{ height: `100%`, width: `65%` }} src={imgRegister} alt="" />
       <form
         style={{

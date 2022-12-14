@@ -19,8 +19,8 @@ const S_Register = styled(Box)({
 });
 const S_formRegister = styled(Box)({
   width: `35%`,
-  height: `100vh`,
-  padding: `50px`,
+  // height: `100vh`,
+  padding: `0 50px`,
   display: `flex`,
   flexDirection: `column`,
   alignItems: `center`,
@@ -98,7 +98,7 @@ const index = () => {
         <S_tittle variant="h1">Welcome to StartNow</S_tittle>
         <img src={imgLogo} style={{ width: `343px`, height: "242px" }} alt="" />
         <S_wrapInput>
-          <FormControl style={{ marginTop: `40px` }} variant="standard">
+          <FormControl style={{ marginTop: `20px` }} variant="standard">
             <InputLabel shrink htmlFor="bootstrap-input">
               <Typography
                 style={{
@@ -115,7 +115,7 @@ const index = () => {
               id="bootstrap-input"
             />
           </FormControl>
-          <FormControl style={{ marginTop: `40px` }} variant="standard">
+          <FormControl style={{ marginTop: `20px` }} variant="standard">
             <InputLabel shrink htmlFor="bootstrap-input">
               <Typography
                 style={{
@@ -132,7 +132,7 @@ const index = () => {
               id="bootstrap-input"
             />
           </FormControl>
-          <FormControl style={{ marginTop: `40px` }} variant="standard">
+          <FormControl style={{ marginTop: `20px` }} variant="standard">
             <InputLabel shrink htmlFor="bootstrap-input">
               <Typography
                 style={{
@@ -150,7 +150,7 @@ const index = () => {
             />
           </FormControl>
         </S_wrapInput>
-        <S_buttonNext>Next</S_buttonNext>
+        <S_buttonNext style={{ marginTop: `20px` }}>Next</S_buttonNext>
         <Link
           style={{ marginTop: `10px`, textDecoration: `none` }}
           to={"/Signin"}
