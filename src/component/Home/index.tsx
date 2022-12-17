@@ -13,8 +13,8 @@ import {
   Avatar,
   Button,
 } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import logomain from "../../img/imgMain/logoMain.png";
 import document from "../../img/imgMain/document.png";
 import documentShow from "../../img/ImgCurrent/documentShow.png";
@@ -28,12 +28,11 @@ import search from "../../img/imgMain/search.png";
 import avatar from "../../img/imgMain/Avatar.png";
 import payment from "../../img/imgMain/payment.png";
 import paymentShow from "../../img/ImgCurrent/paymentShow.png";
-import Post_man from "../Home/Post_manager";
-import Overview from "../Home/Overview";
-import OverviewChildren from "../pageChildren/PostChildren";
 import { useNavigate, NavLink } from "react-router-dom";
+import { RootState } from "../../store/store";
+import { changeIndexPage } from "../../store/reducer";
 const Home: React.FC<any> = ({ children }) => {
-  const [show, setShow] = useState(0);
+  const show = useSelector((state: RootState) => state.indexPage.index);
   const arrayIcon = [Vector, document, location, hand, payment];
   const arrayIconShow = [
     VectorShow,
@@ -81,7 +80,12 @@ const Home: React.FC<any> = ({ children }) => {
 
   let activeStyle = {
     color: "green",
-    background: "green",
+  };
+
+  const dispath = useDispatch();
+  const handleIndexPage = (index: number) => {
+    // console.log(index, "Nguywn Anh QUan");
+    dispath(changeIndexPage(index));
   };
   return (
     <Box sx={{ display: "flex" }}>
@@ -129,9 +133,10 @@ const Home: React.FC<any> = ({ children }) => {
                 {/* shet cai hien ra  */}
                 <ListItemButton>
                   <S_NavLink
-                    // onClick={() => {
-                    //   setShow(index);
-                    // }}
+                    onClick={() => {
+                      // console.log(index);
+                      handleIndexPage(index);
+                    }}
                     to={`/${text.toLowerCase()}`}
                     style={({ isActive }) =>
                       isActive ? activeStyle : undefined
