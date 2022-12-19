@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   styled,
@@ -12,6 +12,7 @@ import {
 import InputBase from "@mui/material/InputBase";
 import imgRegister from "../../img/imgRegister.png";
 import imgLogo from "../../img/logoRegister.png";
+import { toast } from "react-toastify";
 const S_Register = styled(Box)({
   width: `100%`,
   display: "flex",
@@ -91,13 +92,36 @@ const S_buttonNext = styled(Button)({
   },
 });
 
-const index = () => {
+const Signin: React.FC = () => {
+  interface stateForm {
+    name: String;
+    password: String;
+  }
+  const [userForm, setUserForm] = useState<stateForm>({
+    name: "",
+    password: "",
+  });
+  const handleChange = (e: any) => {
+    setUserForm({ ...userForm, [e.target.name]: e.target.value });
+  };
+  const navigate = useNavigate();
   const handleSubmit = async (e: any) => {
-    console.log("first");
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/user");
-      console.log(res);
+      const res = await axios.post("http://localhost:5000/user", userForm);
+      console.log(res.data);
+      res.data.user
+        ? navigate("/post_manager")
+        : toast("🦄 Tên đăng nhập hoặc đăng kí sai", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
     } catch (error) {
       console.log(error, "deo co du lieu");
     }
@@ -133,8 +157,10 @@ const index = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
+              name="name"
               onChange={(e) =>
-                console.log((e.target as HTMLTextAreaElement).value)
+                // console.log((e.target as HTMLTextAreaElement).value)
+                handleChange(e)
               }
               defaultValue="Enter your Email"
               id="bootstrap-input"
@@ -153,6 +179,11 @@ const index = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
+              name="password"
+              onChange={(e) =>
+                // console.log((e.target as HTMLTextAreaElement).value)
+                handleChange(e)
+              }
               defaultValue="Enter your  password"
               id="bootstrap-input"
             />
@@ -173,4 +204,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Signin;

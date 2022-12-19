@@ -76,7 +76,6 @@ const Home: React.FC<any> = ({ children }) => {
     width: "100%",
     height: "100%",
   });
-  const navigate = useNavigate();
 
   let activeStyle = {
     color: "green",
@@ -138,9 +137,6 @@ const Home: React.FC<any> = ({ children }) => {
                       handleIndexPage(index);
                     }}
                     to={`/${text.toLowerCase()}`}
-                    style={({ isActive }) =>
-                      isActive ? activeStyle : undefined
-                    }
                   >
                     <ListItemButton>
                       <ListItemIcon
@@ -158,7 +154,7 @@ const Home: React.FC<any> = ({ children }) => {
                       </ListItemIcon>
                       <S_textLeft
                         primary={text}
-                        // sx={show == index ? { color: "green" } : null}
+                        sx={show == index ? { color: "green" } : null}
                       />
                     </ListItemButton>
                   </S_NavLink>

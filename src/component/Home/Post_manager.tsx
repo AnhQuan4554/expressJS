@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -25,6 +25,7 @@ import PostChildren from "../pageChildren/PostChildren";
 import NaviHome from "../Home/index";
 import imgChoice from "../../img/ImgCurrent/choice.png";
 const Post: React.FC<any> = () => {
+  const [showDialogParent, setshowDialogParent] = useState<boolean>(true);
   const columns: GridColDef[] = [
     {
       field: "id",

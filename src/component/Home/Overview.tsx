@@ -11,12 +11,14 @@ import {
   CardActionArea,
   CardContent,
   CardActions,
+  Dialog,
 } from "@mui/material";
 import locationShow from "../../img/ImgCurrent/locationShow.png";
 import paymentShow from "../../img/ImgCurrent/paymentShow.png";
 import handShow from "../../img/ImgCurrent/handShow.png";
 import documentShow from "../../img/ImgCurrent/documentShow.png";
 import NaviHome from "../Home/index";
+import PostChildren from "../pageChildren/PostChildren";
 const S_tittle = styled(Typography)({
   fontWeight: `600`,
   fontSize: `28px`,
@@ -33,6 +35,15 @@ const S_wrapCard = styled(Grid)({
 });
 
 const Overview: React.FC<any> = ({ show }) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <NaviHome>
       <div style={{ marginTop: `72px`, padding: `32px` }}>
@@ -76,10 +87,14 @@ const Overview: React.FC<any> = ({ show }) => {
                   sx={{ width: `90%` }}
                   variant="contained"
                   color="success"
+                  onClick={handleClickOpen}
                 >
                   New Post
                 </Button>
               </CardActions>
+              <Dialog open={open} onClose={handleClose}>
+                {<PostChildren />}
+              </Dialog>
             </Card>
           </Grid>
           <Grid

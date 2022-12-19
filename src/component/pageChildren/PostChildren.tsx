@@ -105,15 +105,17 @@ const currencies = [
   },
 ];
 
-const PostChildren = () => {
+const PostChildren: React.FC<any> = () => {
   const [currency, setCurrency] = useState<any>("EUR");
   const [location, setLocation] = useState<any>("Sydney");
   const [address, setAddress] = useState<any>("Crawford Room, Mortlock ....");
+  useState<boolean>(true);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrency(event.target.value);
   };
   const [open, setOpen] = React.useState(false);
-  const [unShow, setUnShow] = useState(false);
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -121,12 +123,11 @@ const PostChildren = () => {
     setOpen(true);
   };
 
-  console.log(unShow);
-
   return (
     <Box
       style={{
         justifyContent: `center`,
+        // display: "none",
       }}
     >
       <S_OverChildren>
@@ -271,18 +272,26 @@ const PostChildren = () => {
             variant="contained"
             onClick={handleClickOpen}
           >
-            <Dialog
+            {/* <Dialog
               open={open}
               onClose={handleClose}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
             >
-              {<FormSucess />}
-            </Dialog>
+              {<FormSucess open={open} />}
+            </Dialog> */}
             Creat new post
           </Button>
         </S_InputInfor>
       </S_OverChildren>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        {<FormSucess open={open} />}
+      </Dialog>
     </Box>
   );
 };

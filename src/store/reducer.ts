@@ -1,7 +1,7 @@
 import { createReducer, createAction } from "@reduxjs/toolkit";
 
 const intialState = {
-  index: 3,
+  index: 0,
 };
 export const changeIndexPage = createAction<number>(
   "indexPage/changeIndexPage"

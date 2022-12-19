@@ -10,13 +10,16 @@ import Overview from "./component/Home/Overview";
 import Location from "./component/Home/Location";
 import Reward from "./component/Home/Reward";
 import Payment from "./component/Home/Payment";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [index, setIndex] = useState(0);
   return (
     <>
       <Routes>
-        <Route path="/" element={<PageHome index={index} />} />
-        <Route path="/signin" element={<Sigin />} />
+        {/* <Route path="/" element={<PageHome index={index} />} /> */}
+        <Route path="/" element={<Sigin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/postChildren" element={<PostChildren />} />
         <Route path="/post_manager" element={<Post_manager />} />
@@ -25,6 +28,7 @@ function App() {
         <Route path="/reward" element={<Reward />} />
         <Route path="/payment" element={<Payment />} />
       </Routes>
+      <ToastContainer />
     </>
     // <div className="App">
     //   <header className="App-header">

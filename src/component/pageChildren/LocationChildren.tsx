@@ -206,18 +206,26 @@ const LocationChildren = () => {
             variant="contained"
             onClick={handleClickOpen}
           >
-            <Dialog
+            {/* <Dialog
               open={open}
               onClose={handleClose}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
             >
               {<FormSucess />}
-            </Dialog>
+            </Dialog> */}
             Creat new post
           </Button>
         </S_InputInfor>
       </S_OverChildren>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        {<FormSucess />}
+      </Dialog>
     </Box>
   );
 };

@@ -27,7 +27,7 @@ const S_formSucess = styled(Box)({
   flexDirection: "column",
   padding: `40px`,
 });
-const FormSucess = () => {
+const FormSucess: React.FC<any> = ({ setshowDialogParent }) => {
   return (
     <S_formSucess>
       <Typography
