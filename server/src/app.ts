@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import routerUser from "./router/userRouter";
 import indexRouter from "./router/index";
 import postRouter from "./router/postRouter";
+import locationRouter from "./router/locationRouter";
 import { config } from "dotenv";
 import cors from "cors";
 config();
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use("/user", routerUser);
+app.use("/location", locationRouter);
 app.use("/post", postRouter);
 app.use("/", indexRouter);
 

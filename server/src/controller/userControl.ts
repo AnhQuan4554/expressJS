@@ -19,7 +19,7 @@ class UserController {
         console.log(req.body, "dữ liệu đưa lên server là");
         // await newUser.save();
       }
-      const checkUser = await User.findOne({ name: data.name });
+      const checkUser = await User.findOne({ name: data.email });
       console.log(checkUser);
       const accessToken = jwt.sign(
         { userID: newUser._id },
