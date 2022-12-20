@@ -94,11 +94,11 @@ const S_buttonNext = styled(Button)({
 
 const Signin: React.FC = () => {
   interface stateForm {
-    name: String;
+    email: String;
     password: String;
   }
   const [userForm, setUserForm] = useState<stateForm>({
-    name: "",
+    email: "",
     password: "",
   });
   const takeInforUser = (e: any) => {
@@ -114,7 +114,7 @@ const Signin: React.FC = () => {
       );
       console.log(res.data);
       res.data.user
-        ? navigate("/post_manager")
+        ? navigate("/overview")
         : toast("🦄 Tên đăng nhập hoặc đăng kí sai", {
             position: "top-right",
             autoClose: 5000,
@@ -160,9 +160,10 @@ const Signin: React.FC = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
-              name="name"
+              name="email"
               onChange={(e) => takeInforUser(e)}
-              defaultValue="Enter your Email"
+              defaultValue=""
+              placeholder="Enter your Email"
               id="bootstrap-input"
             />
           </FormControl>
@@ -184,7 +185,8 @@ const Signin: React.FC = () => {
                 // console.log((e.target as HTMLTextAreaElement).value)
                 takeInforUser(e)
               }
-              defaultValue="Enter your  password"
+              defaultValue=""
+              placeholder="Enter your  password"
               id="bootstrap-input"
             />
           </FormControl>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {
@@ -107,16 +107,16 @@ const currencies = [
 ];
 
 const PostChildren: React.FC<any> = () => {
-  interface typeInforCreat {
+  interface typePost {
     id: String;
     imgTittle: String;
     contentTittle: String;
     releaseDate: String;
-    view: 300;
+    view: Number;
     status: String;
     userID: String;
   }
-  const [inforCreat, setInforCreat] = useState<typeInforCreat>({
+  const [inforCreat, setInforCreat] = useState<typePost>({
     id: "",
     imgTittle: "",
     contentTittle: "",
@@ -165,6 +165,12 @@ const PostChildren: React.FC<any> = () => {
     var file = e.target.files;
     seturlImg(URL.createObjectURL(file[0]));
   };
+  useEffect(() => {
+    setInforCreat({
+      ...inforCreat,
+      imgTittle: urlImg,
+    });
+  }, [urlImg]);
   return (
     <Box
       style={{
@@ -313,7 +319,6 @@ const PostChildren: React.FC<any> = () => {
                 type="file"
                 onChange={(e) => {
                   handleImage(e);
-                  // console.log(e.target.files);
                 }}
               />
             </Box>

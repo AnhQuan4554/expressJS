@@ -74,7 +74,6 @@ const Home: React.FC<any> = ({ children }) => {
 
   const S_NavLink = styled(NavLink)({
     textDecoration: "none",
-
     display: "block",
     width: "100%",
     height: "100%",
@@ -135,6 +134,11 @@ const Home: React.FC<any> = ({ children }) => {
                 {/* shet cai hien ra  */}
                 <ListItemButton>
                   <S_NavLink
+                    style={
+                      show == index
+                        ? { background: "#D5EEDB" }
+                        : { background: "" }
+                    }
                     onClick={() => {
                       // console.log(index);
                       handleIndexPage(index);
