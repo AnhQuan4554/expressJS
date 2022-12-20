@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -11,6 +11,7 @@ import {
 import InputBase from "@mui/material/InputBase";
 import imgRegister from "../../img/imgRegister.png";
 import imgLogo from "../../img/logoRegister.png";
+import axios from "axios";
 const S_Register = styled(Box)({
   width: `100%`,
   display: "flex",
@@ -46,7 +47,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     border: "1px solid #ced4da",
     fontSize: 16,
     width: "343px",
-    color: "#B1B5C4",
+    color: "#000",
     padding: "10px 12px",
     transition: theme.transitions.create([
       "border-color",
@@ -90,11 +91,45 @@ const S_buttonNext = styled(Button)({
   },
 });
 
-const index = () => {
+const Register = () => {
+  interface stateForm {
+    name: String;
+    email: String;
+    password: String;
+  }
+  const [userForm, setUserForm] = useState<stateForm>({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const takeInforUser = (e: any) => {
+    setUserForm({ ...userForm, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    // console.log(userForm);
+    try {
+      const res = await await axios.post(
+        "http://localhost:5000/user/register",
+        userForm
+      );
+    } catch (error) {}
+  };
   return (
     <S_Register>
       <img style={{ height: `100%`, width: `65%` }} src={imgRegister} alt="" />
-      <S_formRegister>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+        style={{
+          width: `35%`,
+          display: `flex`,
+          flexDirection: "column",
+          padding: `50px`,
+          alignItems: `center`,
+        }}
+      >
         <S_tittle variant="h1">Welcome to StartNow</S_tittle>
         <img src={imgLogo} style={{ width: `343px`, height: "242px" }} alt="" />
         <S_wrapInput>
@@ -111,7 +146,10 @@ const index = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
-              defaultValue="Enter your Email"
+              name="name"
+              onChange={(e) => takeInforUser(e)}
+              defaultValue=""
+              placeholder="Enter your name"
               id="bootstrap-input"
             />
           </FormControl>
@@ -128,7 +166,10 @@ const index = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
-              defaultValue="Enter your  password"
+              name="password"
+              onChange={(e) => takeInforUser(e)}
+              defaultValue=""
+              placeholder="Enter your  password"
               id="bootstrap-input"
             />
           </FormControl>
@@ -145,12 +186,17 @@ const index = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
-              defaultValue="Enter your confirm password"
+              name="confirmPassword"
+              onChange={(e) => takeInforUser(e)}
+              defaultValue=""
+              placeholder="Enter your confirm password"
               id="bootstrap-input"
             />
           </FormControl>
         </S_wrapInput>
-        <S_buttonNext style={{ marginTop: `20px` }}>Next</S_buttonNext>
+        <S_buttonNext type="submit" style={{ marginTop: `20px` }}>
+          Next
+        </S_buttonNext>
         <Link
           style={{ marginTop: `10px`, textDecoration: `none` }}
           to={"/Signin"}
@@ -159,9 +205,9 @@ const index = () => {
           <span style={{ color: `#2BA84A` }}> Click here</span> to Sign up if
           you have an account
         </Link>
-      </S_formRegister>
+      </form>
     </S_Register>
   );
 };
 
-export default index;
+export default Register;

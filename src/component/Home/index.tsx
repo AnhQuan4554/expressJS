@@ -64,6 +64,9 @@ const Home: React.FC<any> = ({ children }) => {
     // justifyContent: `space-between`,
   });
   const S_textLeft = styled(ListItemText)({
+    "& .MuiListItemText-primary": {
+      fontWeight: "600",
+    },
     "& .css-10hburv-MuiTypography-root": {
       fontWeight: `700`,
     },
@@ -154,7 +157,11 @@ const Home: React.FC<any> = ({ children }) => {
                       </ListItemIcon>
                       <S_textLeft
                         primary={text}
-                        sx={show == index ? { color: "green" } : null}
+                        sx={
+                          show == index
+                            ? { color: "green" }
+                            : { color: "#353945" }
+                        }
                       />
                     </ListItemButton>
                   </S_NavLink>

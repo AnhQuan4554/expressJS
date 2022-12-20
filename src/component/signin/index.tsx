@@ -101,14 +101,17 @@ const Signin: React.FC = () => {
     name: "",
     password: "",
   });
-  const handleChange = (e: any) => {
+  const takeInforUser = (e: any) => {
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
   const navigate = useNavigate();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/user", userForm);
+      const res = await axios.post(
+        "http://localhost:5000/user/signin",
+        userForm
+      );
       console.log(res.data);
       res.data.user
         ? navigate("/post_manager")
@@ -158,10 +161,7 @@ const Signin: React.FC = () => {
             </InputLabel>
             <BootstrapInput
               name="name"
-              onChange={(e) =>
-                // console.log((e.target as HTMLTextAreaElement).value)
-                handleChange(e)
-              }
+              onChange={(e) => takeInforUser(e)}
               defaultValue="Enter your Email"
               id="bootstrap-input"
             />
@@ -182,7 +182,7 @@ const Signin: React.FC = () => {
               name="password"
               onChange={(e) =>
                 // console.log((e.target as HTMLTextAreaElement).value)
-                handleChange(e)
+                takeInforUser(e)
               }
               defaultValue="Enter your  password"
               id="bootstrap-input"

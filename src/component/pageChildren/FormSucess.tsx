@@ -19,15 +19,19 @@ import {
   TextField,
 } from "@mui/material";
 import imgSuccess from "./imgPageChildren/imgSucess.png";
-const S_formSucess = styled(Box)({
-  minWidth: `645px`,
-  minHeight: `463px`,
-  display: `flex`,
-  alignItems: "center",
-  flexDirection: "column",
-  padding: `40px`,
-});
+import { useNavigate } from "react-router-dom";
 const FormSucess: React.FC<any> = ({ setshowDialogParent }) => {
+  const S_formSucess = styled(Box)({
+    minWidth: `645px`,
+    minHeight: `463px`,
+    display: `flex`,
+    alignItems: "center",
+    flexDirection: "column",
+    padding: `40px`,
+  });
+  const backToPageParent = () => {
+    window.location.reload();
+  };
   return (
     <S_formSucess>
       <Typography
@@ -57,7 +61,7 @@ const FormSucess: React.FC<any> = ({ setshowDialogParent }) => {
         src={imgSuccess}
         alt=""
       />
-      <Button variant="contained" color="success">
+      <Button variant="contained" color="success" onClick={backToPageParent}>
         Back to reward management{" "}
       </Button>
     </S_formSucess>
