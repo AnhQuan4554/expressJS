@@ -1,25 +1,6 @@
 import React from "react";
-import {
-  AppBar,
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Toolbar,
-  Typography,
-  styled,
-  Avatar,
-  Button,
-  FormControl,
-  InputLabel,
-  InputBase,
-  TextField,
-} from "@mui/material";
+import { Box, Typography, styled, Button } from "@mui/material";
 import imgSuccess from "./imgPageChildren/imgSucess.png";
-import { useNavigate } from "react-router-dom";
 const FormSucess: React.FC<any> = ({ setshowDialogParent }) => {
   const S_formSucess = styled(Box)({
     minWidth: `645px`,

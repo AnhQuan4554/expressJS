@@ -1,6 +1,5 @@
 import React, { CSSProperties, useEffect, useState } from "react";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {
   Box,
   Typography,
@@ -102,25 +101,23 @@ const currencies = [
   },
 ];
 
-const PostChildren: React.FC<any> = ({ setdataPost }) => {
+const PaymentChildren: React.FC<any> = () => {
   let [loading, setLoading] = useState(false);
 
   const dispath = useDispatch();
   interface typePost {
-    id: String;
-    imgTittle: String;
-    contentTittle: String;
-    releaseDate: String;
-    view: Number;
+    imgEvent: String;
+    contentEvent: String;
+    money: String;
+    usedDate: String;
     status: String;
     userID: String;
   }
   const [inforCreat, setInforCreat] = useState<typePost>({
-    id: "",
-    imgTittle: "",
-    contentTittle: "",
-    releaseDate: "",
-    view: 300,
+    imgEvent: "",
+    contentEvent: "",
+    money: "",
+    usedDate: "5454",
     status: "ONLINE",
     userID: "QuanID",
   });
@@ -133,10 +130,10 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
     const date = new Date();
     try {
       const imgPush = await uploadFile();
-      await axios.post("http://localhost:5000/post/creatpost", {
+      await axios.post("http://localhost:5000/payment/creatPayment", {
         ...inforCreat,
-        imgTittle: `${imgPush}`,
-        releaseDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+        imgEvent: `${imgPush}`,
+        usedDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
       });
       console.log("success");
     } catch (error) {
@@ -174,7 +171,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
   useEffect(() => {
     setInforCreat({
       ...inforCreat,
-      imgTittle: urlImg,
+      imgEvent: urlImg,
     });
   }, [urlImg]);
   const uploadFile = async () => {
@@ -187,7 +184,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
     <Box
       style={{
         justifyContent: `center`,
-        position: "relative",
+        position: `relative`,
       }}
     >
       <S_OverChildren>
@@ -196,21 +193,21 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
             style={{ fontWeight: `600`, marginBottom: `20px` }}
             variant="h4"
           >
-            Add new post
+            Add new payment record
           </Typography>
           <S_InputInfor>
             <Typography style={{ fontWeight: `600`, fontSize: `18px` }}>
-              Post Information
+              Payment record information
             </Typography>
-            <FormControl variant="standard">
+            <Box>
               <Typography variant="h6">Tittle</Typography>
               <BootstrapInput
-                defaultValue={inforCreat.contentTittle}
+                defaultValue={inforCreat.contentEvent}
                 onChange={handleChange}
                 name="contentTittle"
                 id="bootstrap-input"
               />
-            </FormControl>
+            </Box>
             <FormControl variant="standard">
               <Box
                 component="form"
@@ -226,7 +223,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
                 noValidate
                 autoComplete="off"
               >
-                <Typography variant="h6">Raising</Typography>
+                <Typography variant="h6">Money Used</Typography>
                 <div
                   style={{
                     display: `flex`,
@@ -235,7 +232,9 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
                 >
                   <BootstrapInput
                     sx={{ width: "85%" }}
-                    defaultValue="1000"
+                    placeholder="Money Used"
+                    onChange={handleChange}
+                    name="money"
                     id="bootstrap-input"
                   />
                   <S_inputSelect
@@ -275,7 +274,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
                   style={{ position: `absolute`, top: `0px`, left: `51%` }}
                   variant="h6"
                 >
-                  Location
+                  Address
                 </Typography>
                 <div>
                   <S_inputSelect
@@ -367,4 +366,4 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
   );
 };
 
-export default PostChildren;
+export default PaymentChildren;

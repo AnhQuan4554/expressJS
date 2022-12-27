@@ -3,12 +3,41 @@ import { createReducer, createAction } from "@reduxjs/toolkit";
 const intialState = {
   index: 0,
 };
+const intialStateDetail: any = {
+  dataPost: [],
+  dataLocation: [],
+  dataReward: [],
+  dataPayment: [],
+};
+
 export const changeIndexPage = createAction<number>(
   "indexPage/changeIndexPage"
 );
+export const addDataPost = createAction<any>("dataPost/addDataPost");
+export const getDataPost = createAction<[]>("dataPost/getDataPost");
+export const getDataLocation = createAction<[]>("dataLocation/getDataLocation");
+export const getDataReward = createAction<[]>("dataReward/getDataReward");
+export const getDataPayment = createAction<[]>("dataPayment/getDataPayment");
 const indexPageReducer = createReducer(intialState, (builder) => {
   builder.addCase(changeIndexPage, (state, action) => {
     state.index = action.payload as number;
   });
 });
-export default indexPageReducer;
+const dataPostReducer = createReducer(intialStateDetail, (builder) => {
+  builder.addCase(addDataPost, (state, action) => {
+    state.dataPost.push(action.payload);
+  });
+  builder.addCase(getDataPost, (state, action) => {
+    state.dataPost = action.payload;
+  });
+  builder.addCase(getDataLocation, (state, action) => {
+    state.dataLocation = action.payload;
+  });
+  builder.addCase(getDataReward, (state, action) => {
+    state.dataReward = action.payload;
+  });
+  builder.addCase(getDataPayment, (state, action) => {
+    state.dataPayment = action.payload;
+  });
+});
+export { indexPageReducer, dataPostReducer };

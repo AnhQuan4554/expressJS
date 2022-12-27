@@ -15,8 +15,7 @@ import axios from "axios";
 const S_Register = styled(Box)({
   width: `100%`,
   display: "flex",
-  alignItems: `center`,
-  height: `100vh`,
+  height: "100vh",
 });
 const S_formRegister = styled(Box)({
   width: `35%`,
@@ -74,6 +73,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 const S_wrapInput = styled(Box)({
   marginTop: `10px`,
+  textAlign: "center",
 });
 const S_buttonNext = styled(Button)({
   padding: `16px 80px`,
@@ -117,7 +117,11 @@ const Register = () => {
   };
   return (
     <S_Register>
-      <img style={{ height: `100%`, width: `65%` }} src={imgRegister} alt="" />
+      <img
+        style={{ maxHeight: `100%`, width: `65%` }}
+        src={imgRegister}
+        alt=""
+      />
       <form
         onSubmit={(e) => {
           handleSubmit(e);
@@ -126,7 +130,6 @@ const Register = () => {
           width: `35%`,
           display: `flex`,
           flexDirection: "column",
-          padding: `50px`,
           alignItems: `center`,
         }}
       >
@@ -198,8 +201,8 @@ const Register = () => {
           Next
         </S_buttonNext>
         <Link
-          style={{ marginTop: `10px`, textDecoration: `none` }}
-          to={"/Signin"}
+          style={{ marginTop: `10px`, textDecoration: `none`, color: "#000" }}
+          to={"/"}
         >
           {" "}
           <span style={{ color: `#2BA84A` }}> Click here</span> to Sign up if

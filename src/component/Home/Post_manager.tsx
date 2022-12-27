@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
-  AppBar,
   Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
   styled,
   Avatar,
   Button,
-  Modal,
   Dialog,
-  DialogTitle,
-  DialogContentText,
-  DialogActions,
 } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import { useDispatch } from "react-redux";
+import { FiMoreHorizontal } from "react-icons/fi";
+
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { useDispatch, useSelector } from "react-redux";
 import imgView from "../../img/imgMain/imgView.png";
 import PostChildren from "../pageChildren/PostChildren";
 import NaviHome from "../Home/index";
-import imgChoice from "../../img/ImgCurrent/choice.png";
 import axios from "axios";
-import { changeIndexPage } from "../../store/reducer";
+import { changeIndexPage, getDataPost } from "../../store/reducer";
+import { RootState } from "../../store/store";
 
 const Post: React.FC<any> = () => {
   const S_dataGrid = styled(DataGrid)({
@@ -49,31 +40,23 @@ const Post: React.FC<any> = () => {
     color: `#30993B`,
     fontWeight: `500`,
   });
-  const styleOpenBox = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
-  const [dataPost, setdataPost] = useState([]);
+  const dispath = useDispatch();
+  const dataPost = useSelector(
+    (state: RootState) => state.dataPostReducer.dataPost
+  );
   const renderDataPost = async () => {
     try {
       const res = await axios.get("http://localhost:5000/post");
       const { data } = res.data;
-      res.data && setdataPost(data);
+      res.data && dispath(getDataPost(data));
     } catch (err) {
       console.log(err);
     }
   };
+  // render mõi lần vào trang
   useEffect(() => {
     renderDataPost();
   }, []);
-
   const columns: GridColDef[] = [
     {
       field: "id",
@@ -145,26 +128,14 @@ const Post: React.FC<any> = () => {
       headerName: " ",
       width: 80,
       renderCell: () => (
-        <>
-          <img
-            style={{ maxWidth: "26px", minHeight: "12px" }}
-            src={imgChoice}
-            alt=""
-          />
-        </>
+        <FiMoreHorizontal style={{ width: "30px", height: `30px` }} />
       ),
     },
   ];
 
   //chinh sua index
-  const dispath = useDispatch();
   dispath(changeIndexPage(1));
-  const arrRender = dataPost.map((item: any) => ({ ...item, id: item._id }));
-  const rows = arrRender;
-  // console.log("rows là ", rows);
-  // console.log("arrRender là ", arrRender);
-  /* start Model */
-
+  const rows = dataPost;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -216,6 +187,7 @@ const Post: React.FC<any> = () => {
             <S_dataGrid
               rows={rows}
               columns={columns}
+              getRowId={(row) => row._id}
               disableSelectionOnClick
               experimentalFeatures={{ newEditingApi: true }}
             />

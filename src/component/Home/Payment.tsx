@@ -1,132 +1,132 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FiMoreHorizontal } from "react-icons/fi";
+
 import {
-  AppBar,
   Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
-  styled,
   Avatar,
   Button,
-  Modal,
   Dialog,
-  DialogTitle,
-  DialogContentText,
-  DialogActions,
+  styled,
 } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import avatar from "../../img/imgMain/Avatar.png";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import NaviHome from "./index";
-import imgChoice from "../../img/ImgCurrent/choice.png";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { changeIndexPage, getDataPayment } from "../../store/reducer";
+import axios from "axios";
+import PaymentChildren from "../pageChildren/PaymentChildren";
 const Payment: React.FC<any> = () => {
+  // CSS ---------------------------
+  const S_dataGrid = styled(DataGrid)({
+    "& .MuiDataGrid-columnHeaderTitle": {
+      fontWeight: `600`,
+      fontSize: `18px`,
+    },
+    "& .MuiSvgIcon-fontSizeMedium": {
+      display: "none",
+    },
+  });
+  const S_textColoum = styled(Typography)({
+    width: `100%`,
+    height: `72%`,
+    borderRadius: `20px`,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#D5EEDB",
+    color: `#30993B`,
+    fontWeight: `500`,
+  });
+  // state ---------------------------------------------
+  const dispath = useDispatch();
+  dispath(changeIndexPage(4));
+  const dataPost = useSelector(
+    (state: RootState) => state.dataPostReducer.dataPayment
+  );
+  const renderDataPost = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/payment");
+      const { data } = res.data;
+
+      data && (await dispath(getDataPayment(data)));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    renderDataPost();
+  }, []);
+  console.log(dataPost);
   const columns: GridColDef[] = [
     {
       field: "logId",
       headerName: "LOG ID",
-      width: 150,
+      width: 180,
       editable: true,
+      renderCell: (params) => (
+        <Typography variant="h6" sx={{ color: "green" }}>
+          {params.id.toString().slice(0, 8)}
+        </Typography>
+      ),
     },
     {
       field: "even",
       headerName: "EVENT",
       // type: "number",
-      width: 200,
+      width: 250,
       editable: true,
       renderCell: (params) => (
         <>
           <Avatar
-            sx={{ width: `18px`, height: `18px`, marginRight: `20px` }}
-            src={avatar}
+            sx={{ width: `28px`, height: `28px`, marginRight: `20px` }}
+            src={params.row.imgEvent}
           />
-          {params.row.even}
+          <Typography variant="h6" sx={{ fontWeight: "600" }}>
+            {" "}
+            {params.row.contentEvent}
+          </Typography>
         </>
       ),
     },
     {
-      field: "moneyUsed",
+      field: "money",
       headerName: "MONEY USED",
-      width: 200,
+      width: 250,
       editable: true,
+      renderCell: (params) => (
+        <Typography variant="h6">{params.row.money}</Typography>
+      ),
     },
 
     {
       field: "usedDate",
       headerName: "USED DATE",
-      width: 200,
+      width: 250,
       editable: true,
+      renderCell: (param) => (
+        <Typography variant="h6"> {param.row.usedDate}</Typography>
+      ),
     },
     {
       field: "status",
       headerName: "STATUS",
-      width: 100,
+      width: 120,
       editable: true,
+      renderCell: (params) => <S_textColoum>{params.row.status}</S_textColoum>,
     },
     {
       field: "dsa",
       headerName: " ",
       width: 50,
       renderCell: () => (
-        <>
-          <img
-            style={{ minWidth: "10px", minHeight: "6px", height: `6px` }}
-            src={imgChoice}
-            alt=""
-          />
-        </>
+        <FiMoreHorizontal style={{ width: "30px", height: `30px` }} />
       ),
     },
   ];
-  const rows = [
-    {
-      id: 1,
-      logId: "Snow",
-      even: "Ha DOng",
-      moneyUsed: "Jon",
-      usedDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 2,
-      logId: "Lannister",
-      even: "Ha DOng",
-      moneyUsed: "Cersei",
-      usedDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 3,
-      logId: "Lannister",
-      even: "Ha DOng",
-      moneyUsed: "Jaime",
-      usedDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 4,
-      logId: "Stark",
-      even: "Ha DOng",
-      moneyUsed: "Arya",
-      usedDate: "04/50/2022",
-      status: "online",
-    },
-  ];
-  /* start Model */
-  const styleOpenBox = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+  const rows = dataPost;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -168,19 +168,22 @@ const Payment: React.FC<any> = () => {
             </Button>
 
             <Dialog open={open} onClose={handleClose}>
-              {/* {<PostChildren />} */}
+              {<PaymentChildren />}
             </Dialog>
           </div>
         </Toolbar>
 
-        <Box sx={{ height: 650, bgcolor: "#fff" }}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            disableSelectionOnClick
-            experimentalFeatures={{ newEditingApi: true }}
-          />
-        </Box>
+        {dataPost && (
+          <Box sx={{ height: 650, bgcolor: "#fff" }}>
+            <S_dataGrid
+              rows={rows || null}
+              columns={columns || null}
+              getRowId={(row) => row._id}
+              disableSelectionOnClick
+              experimentalFeatures={{ newEditingApi: true }}
+            />
+          </Box>
+        )}
       </Box>
     </NaviHome>
   );

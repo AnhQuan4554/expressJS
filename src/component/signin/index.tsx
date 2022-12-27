@@ -19,14 +19,7 @@ const S_Register = styled(Box)({
   alignItems: `center`,
   height: `100vh`,
 });
-const S_formRegister = styled(Box)({
-  width: `35%`,
-  height: `100vh`,
-  padding: `50px`,
-  display: `flex`,
-  flexDirection: `column`,
-  alignItems: `center`,
-});
+
 const S_tittle = styled(Typography)({
   fontWeight: `700`,
   fontSize: `32px`,
@@ -75,6 +68,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 const S_wrapInput = styled(Box)({
   marginTop: `10px`,
+  textAlign: "center",
 });
 const S_buttonNext = styled(Button)({
   padding: `16px 80px`,
@@ -112,10 +106,10 @@ const Signin: React.FC = () => {
         "http://localhost:5000/user/signin",
         userForm
       );
-      console.log(res.data);
+      console.log(res.data.accessToken);
       res.data.user
         ? navigate("/overview")
-        : toast("🦄 Tên đăng nhập hoặc đăng kí sai", {
+        : toast("🦄 Tên đăng nhập sai", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -181,10 +175,7 @@ const Signin: React.FC = () => {
             </InputLabel>
             <BootstrapInput
               name="password"
-              onChange={(e) =>
-                // console.log((e.target as HTMLTextAreaElement).value)
-                takeInforUser(e)
-              }
+              onChange={(e) => takeInforUser(e)}
               defaultValue=""
               placeholder="Enter your  password"
               id="bootstrap-input"
@@ -194,7 +185,7 @@ const Signin: React.FC = () => {
         <S_buttonNext type="submit">Next</S_buttonNext>
 
         <Link
-          style={{ marginTop: `10px`, textDecoration: `none` }}
+          style={{ marginTop: `10px`, textDecoration: `none`, color: "#000" }}
           to={"/Register"}
         >
           {" "}

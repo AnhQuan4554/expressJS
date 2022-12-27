@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
-  AppBar,
   Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
   styled,
   Avatar,
   Button,
-  Modal,
   Dialog,
-  DialogTitle,
-  DialogContentText,
-  DialogActions,
 } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import avatar from "../../img/imgMain/Avatar.png";
+import { FiMoreHorizontal } from "react-icons/fi";
+
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import NaviHome from "../Home/index";
-import imgChoice from "../../img/ImgCurrent/choice.png";
 import LocationChildren from "../pageChildren/LocationChildren";
-import { changeIndexPage } from "../../store/reducer";
-import { useDispatch } from "react-redux";
+import { changeIndexPage, getDataLocation } from "../../store/reducer";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { RootState } from "../../store/store";
 const Location: React.FC<any> = () => {
   const S_dataGrid = styled(DataGrid)({
     "& .MuiDataGrid-columnHeaderTitle": {
@@ -59,13 +49,15 @@ const Location: React.FC<any> = () => {
     boxShadow: 24,
     p: 4,
   };
-  const [dataLocation, setdataLocation] = useState([]);
+  const dispath = useDispatch();
+  const dataLocation = useSelector(
+    (state: RootState) => state.dataPostReducer.dataLocation
+  );
   const renderDataLocation = async () => {
     try {
       const res = await axios.get("http://localhost:5000/location");
       const { data } = res.data;
-      res.data && setdataLocation(data);
-      console.log(data);
+      res.data && dispath(getDataLocation(data));
     } catch (err) {
       console.log(err);
     }
@@ -123,7 +115,7 @@ const Location: React.FC<any> = () => {
       field: "addedDate",
       headerName: "ADDED DATE",
       sortable: false,
-      width: 300,
+      width: 250,
 
       renderCell: (param) => (
         <Typography variant="h6"> {param.row.addedDate}</Typography>
@@ -142,28 +134,15 @@ const Location: React.FC<any> = () => {
       headerName: " ",
       width: 80,
       renderCell: () => (
-        <>
-          <img
-            style={{ maxWidth: "26px", minHeight: "12px" }}
-            src={imgChoice}
-            alt=""
-          />
-        </>
+        <FiMoreHorizontal style={{ width: "30px", height: `30px` }} />
       ),
     },
   ];
 
   //chinh sua index
-  const dispath = useDispatch();
   dispath(changeIndexPage(2));
-  const arrRender = dataLocation.map((item: any) => ({
-    ...item,
-    id: item._id,
-  }));
-  const rows = arrRender;
-  // console.log("rows là ", rows);
-  // console.log("arrRender là ", arrRender);
-  /* start Model */
+
+  const rows = dataLocation;
 
   const [open, setOpen] = React.useState(false);
 
@@ -216,6 +195,7 @@ const Location: React.FC<any> = () => {
             <S_dataGrid
               rows={rows}
               columns={columns}
+              getRowId={(row) => row._id}
               disableSelectionOnClick
               experimentalFeatures={{ newEditingApi: true }}
             />

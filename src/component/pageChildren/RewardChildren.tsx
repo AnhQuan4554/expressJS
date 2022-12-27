@@ -1,5 +1,5 @@
 import React, { CSSProperties, useEffect, useState } from "react";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import BeatLoader from "react-spinners/BeatLoader";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {
   Box,
@@ -14,28 +14,20 @@ import {
 import addImg from "./imgPageChildren/addImg.svg";
 import FormSucess from "./FormSucess";
 import axios from "axios";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../firebase";
-import { useDispatch } from "react-redux";
-import { BeatLoader } from "react-spinners";
 const S_OverChildren = styled(Box)({
-  padding: `10px 40px`,
+  padding: `40px 40px`,
+  // height: `1023px`,
   background: "#fff",
   margin: `auto`,
 });
 const S_InputInfor = styled(Box)({
   display: `flex`,
+  //   alignItems: "center",
   flexDirection: "column",
 });
 /* CSS input */
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  textAlign: "center",
-  position: "absolute",
-  left: "50%",
-  transform: `translate(-50%)`,
-  top: `50%`,
-};
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   "& lable": { position: `initial` },
   "label + &": {
@@ -82,6 +74,9 @@ const S_inputSelect = styled(TextField)({
   marginBottom: "16px",
   background: `#fff`,
   borderRadius: `4px`,
+  // padding: "20px",
+  // width: `94px`,
+  // height: `43px`,
 });
 const currencies = [
   {
@@ -102,42 +97,42 @@ const currencies = [
   },
 ];
 
-const PostChildren: React.FC<any> = ({ setdataPost }) => {
+const RewardChildren: React.FC<any> = () => {
   let [loading, setLoading] = useState(false);
-
-  const dispath = useDispatch();
   interface typePost {
     id: String;
-    imgTittle: String;
-    contentTittle: String;
-    releaseDate: String;
-    view: Number;
+    imgVocher: String;
+    contentVocher: String;
+    expiredDate: String;
+    activeDate: String;
     status: String;
     userID: String;
   }
   const [inforCreat, setInforCreat] = useState<typePost>({
     id: "",
-    imgTittle: "",
-    contentTittle: "",
-    releaseDate: "",
-    view: 300,
+    imgVocher: "",
+    contentVocher: "",
+    expiredDate: "",
+    activeDate: "",
     status: "ONLINE",
     userID: "QuanID",
   });
-  const [currency, setCurrency] = useState<any>("EUR");
-  const [location, setLocation] = useState<any>("Sydney");
-  const [address, setAddress] = useState<any>("Crawford Room, Mortlock ....");
 
-  const creatPost = async (e: any) => {
+  //submit form | Creat Post
+  const creatReward = async (e: any) => {
     e.preventDefault();
     const date = new Date();
+    const imgPush = await uploadFile();
     try {
-      const imgPush = await uploadFile();
-      await axios.post("http://localhost:5000/post/creatpost", {
-        ...inforCreat,
-        imgTittle: `${imgPush}`,
-        releaseDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
-      });
+      const res = await axios.post(
+        "http://localhost:5000/reward/creat-reward",
+        {
+          ...inforCreat,
+          imgVocher: `${imgPush}`,
+          expiredDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+          activeDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+        }
+      );
       console.log("success");
     } catch (error) {
       console.log(error, "LOI CON ME NO ROI");
@@ -145,27 +140,22 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrency(event.target.value);
     setInforCreat({
       ...inforCreat,
       [event.target.name]: event.target.value,
+      imgVocher: urlImg,
     });
   };
-  // console.log(imgUrlFirebase, "imgUrlFirebaseimgUrlFirebaseimgUrlFirebase");
   const [open, setOpen] = React.useState(false);
-  const handleClose = async () => {
+  const handleClose = () => {
     setOpen(false);
   };
   const handleClickOpen = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-
-      setOpen(true);
-    }, 2000);
+    setOpen(true);
   };
   const [urlImg, seturlImg] = useState("");
   const [urlImgFireBase, seturlImgFireBase] = useState<any>("");
+
   const handleImage = (e: any) => {
     var file = e.target.files;
     seturlImg(URL.createObjectURL(file[0]));
@@ -174,7 +164,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
   useEffect(() => {
     setInforCreat({
       ...inforCreat,
-      imgTittle: urlImg,
+      imgVocher: urlImg,
     });
   }, [urlImg]);
   const uploadFile = async () => {
@@ -182,36 +172,68 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
     const uploadImg = await uploadBytes(imageRef, urlImgFireBase as any);
     return await getDownloadURL(uploadImg.ref);
   };
-
+  const override: CSSProperties = {
+    display: "block",
+    margin: "0 auto",
+    textAlign: "center",
+    position: "absolute",
+    left: "50%",
+    transform: `translate(-50%)`,
+    top: `50%`,
+  };
   return (
     <Box
       style={{
         justifyContent: `center`,
-        position: "relative",
       }}
     >
       <S_OverChildren>
-        <form onSubmit={creatPost}>
+        <form onSubmit={creatReward}>
           <Typography
             style={{ fontWeight: `600`, marginBottom: `20px` }}
             variant="h4"
           >
-            Add new post
+            Add new voucher
           </Typography>
           <S_InputInfor>
             <Typography style={{ fontWeight: `600`, fontSize: `18px` }}>
-              Post Information
+              Voucher Information
             </Typography>
             <FormControl variant="standard">
-              <Typography variant="h6">Tittle</Typography>
+              <Typography variant="h6">Voucher name</Typography>
               <BootstrapInput
-                defaultValue={inforCreat.contentTittle}
+                defaultValue={inforCreat.contentVocher}
                 onChange={handleChange}
-                name="contentTittle"
+                name="contentVocher"
                 id="bootstrap-input"
               />
             </FormControl>
-            <FormControl variant="standard">
+
+            <Box style={{ display: "flex", alignItems: "center" }}>
+              <Box
+                component="form"
+                sx={{
+                  marginRight: "20px",
+                  padding: "0",
+                  "& .MuiTextField-root": {
+                    width: "10ch",
+                  },
+                  "& select": {
+                    padding: `10px`,
+                  },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <Typography variant="h6">Expired Date</Typography>
+
+                <BootstrapInput
+                  onChange={handleChange}
+                  name="expiredDate"
+                  defaultValue="1000"
+                  id="bootstrap-input"
+                />
+              </Box>
               <Box
                 component="form"
                 sx={{
@@ -226,96 +248,16 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
                 noValidate
                 autoComplete="off"
               >
-                <Typography variant="h6">Raising</Typography>
-                <div
-                  style={{
-                    display: `flex`,
-                    alignItems: `center`,
-                  }}
-                >
-                  <BootstrapInput
-                    sx={{ width: "85%" }}
-                    defaultValue="1000"
-                    id="bootstrap-input"
-                  />
-                  <S_inputSelect
-                    id="filled-select-currency-native"
-                    select
-                    value={currency}
-                    onChange={handleChange}
-                    SelectProps={{
-                      native: true,
-                    }}
-                  >
-                    {currencies.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.value}
-                      </option>
-                    ))}
-                  </S_inputSelect>
-                </div>
-              </Box>
-            </FormControl>
-            <FormControl variant="standard">
-              <Box
-                component="form"
-                sx={{
-                  "& .MuiTextField-root": {
-                    width: "25ch",
-                  },
-                  "& select": {
-                    padding: `10px`,
-                  },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <Typography variant="h6">Location</Typography>
-                <Typography
-                  style={{ position: `absolute`, top: `0px`, left: `51%` }}
-                  variant="h6"
-                >
-                  Location
-                </Typography>
-                <div>
-                  <S_inputSelect
-                    style={{ marginLeft: "0" }}
-                    id="filled-select-currency-native"
-                    select
-                    value={location}
-                    onChange={handleChange}
-                    SelectProps={{
-                      native: true,
-                    }}
+                <Typography variant="h6">Voucher Code</Typography>
 
-                    // variant="filled"
-                  >
-                    {currencies.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </S_inputSelect>
-                  <S_inputSelect
-                    id="filled-select-currency-native"
-                    select
-                    value={address}
-                    onChange={handleChange}
-                    SelectProps={{
-                      native: true,
-                    }}
-
-                    // variant="filled"
-                  >
-                    {currencies.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.value}
-                      </option>
-                    ))}
-                  </S_inputSelect>
-                </div>
+                <BootstrapInput
+                  onChange={handleChange}
+                  name="activeDate"
+                  defaultValue="1000"
+                  id="bootstrap-input"
+                />
               </Box>
-            </FormControl>
+            </Box>
             <Box>
               <Typography variant="h5">Media</Typography>
               <label style={{ marginTop: `20px` }} htmlFor="inputFile">
@@ -367,4 +309,4 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
   );
 };
 
-export default PostChildren;
+export default RewardChildren;

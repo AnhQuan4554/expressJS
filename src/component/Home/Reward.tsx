@@ -1,132 +1,131 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { FiMoreHorizontal } from "react-icons/fi";
 import {
-  AppBar,
   Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
   styled,
   Avatar,
   Button,
-  Modal,
   Dialog,
-  DialogTitle,
-  DialogContentText,
-  DialogActions,
 } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import avatar from "../../img/imgMain/Avatar.png";
-import NaviHome from "./index";
-import imgChoice from "../../img/ImgCurrent/choice.png";
-const Reward: React.FC<any> = () => {
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { useDispatch, useSelector } from "react-redux";
+import NaviHome from "../Home/index";
+import { changeIndexPage, getDataReward } from "../../store/reducer";
+import RewardChildren from "../pageChildren/RewardChildren";
+import { RootState } from "../../store/store";
+import axios from "axios";
+
+const Post: React.FC<any> = () => {
+  const S_dataGrid = styled(DataGrid)({
+    "& .MuiDataGrid-columnHeaderTitle": {
+      fontWeight: `600`,
+      fontSize: `18px`,
+    },
+    "& .MuiSvgIcon-fontSizeMedium": {
+      display: "none",
+    },
+  });
+  const S_textColoum = styled(Typography)({
+    width: `100%`,
+    height: `72%`,
+    borderRadius: `20px`,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#D5EEDB",
+    color: `#30993B`,
+    fontWeight: `500`,
+  });
+  const dispath = useDispatch();
+  const dataPost = useSelector(
+    (state: RootState) => state.dataPostReducer.dataReward
+  );
+  const renderDataPost = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/reward");
+      const { data } = res.data;
+      res.data && dispath(getDataReward(data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    renderDataPost();
+  }, []);
+
   const columns: GridColDef[] = [
     {
-      field: "voucherCode",
+      field: "id",
       headerName: "VOUCHER CODE",
-      width: 150,
+      width: 180,
       editable: true,
+      renderCell: (params) => (
+        <Typography variant="h6" sx={{ color: "green" }}>
+          {params.id.toString().slice(0, 8)}
+        </Typography>
+      ),
     },
     {
-      field: "voucherInfor",
+      field: "wrapVoucher",
       headerName: "VOUCHER INFORMATION",
-      // type: "number",
-      width: 200,
+      width: 250,
       editable: true,
       renderCell: (params) => (
         <>
           <Avatar
-            sx={{ width: `18px`, height: `18px`, marginRight: `20px` }}
-            src={avatar}
+            sx={{ width: `28px`, height: `28px`, marginRight: `20px` }}
+            src={params.row.imgVocher}
           />
-          {params.row.voucherInfor}
+          <Typography variant="h6" sx={{ fontWeight: "600" }}>
+            {" "}
+            {params.row.contentVocher}
+          </Typography>
         </>
       ),
     },
     {
       field: "expiredDate",
       headerName: "EXPIRED DATE",
-      width: 200,
+      // type: "number",
+      width: 250,
       editable: true,
+      renderCell: (params) => (
+        <Typography variant="h6">{params.row.expiredDate}</Typography>
+      ),
     },
-
     {
       field: "activeDate",
       headerName: "ACTIVED DATE",
-      width: 200,
-      editable: true,
+      sortable: false,
+      width: 250,
+      renderCell: (param) => (
+        <Typography variant="h6"> {param.row.activeDate}</Typography>
+      ),
     },
     {
       field: "status",
       headerName: "STATUS",
-      width: 100,
+      width: 120,
       editable: true,
+
+      renderCell: (params) => <S_textColoum>{params.row.status}</S_textColoum>,
     },
     {
       field: "dsa",
       headerName: " ",
-      width: 50,
+      width: 80,
       renderCell: () => (
-        <>
-          <img
-            style={{ minWidth: "26px", minHeight: "12px" }}
-            src={imgChoice}
-            alt=""
-          />
-        </>
+        <FiMoreHorizontal style={{ width: "30px", height: `30px` }} />
       ),
     },
   ];
-  const rows = [
-    {
-      id: 1,
-      voucherCode: "Snow",
-      voucherInfor: "Ha DOng",
-      expiredDate: "Jon",
-      activeDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 2,
-      voucherCode: "Lannister",
-      voucherInfor: "Ha DOng",
-      expiredDate: "Cersei",
-      activeDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 3,
-      voucherCode: "Lannister",
-      voucherInfor: "Ha DOng",
-      expiredDate: "Jaime",
-      activeDate: "04/50/2022",
-      status: "online",
-    },
-    {
-      id: 4,
-      voucherCode: "Stark",
-      voucherInfor: "Ha DOng",
-      expiredDate: "Arya",
-      activeDate: "04/50/2022",
-      status: "online",
-    },
-  ];
-  /* start Model */
-  const styleOpenBox = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+
+  //chinh sua index
+  dispath(changeIndexPage(3));
+  const rows = dataPost;
+
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -155,7 +154,7 @@ const Reward: React.FC<any> = () => {
           }}
         >
           <Typography style={{ fontWeight: `600` }} variant="h4">
-            Reward Management{" "}
+            Post Management{" "}
           </Typography>
           <div>
             <Button
@@ -164,26 +163,29 @@ const Reward: React.FC<any> = () => {
               variant="contained"
               color="success"
             >
-              + New voucher
+              + New Post
             </Button>
 
             <Dialog open={open} onClose={handleClose}>
-              {/* {<PostChildren />} */}
+              {<RewardChildren />}
             </Dialog>
           </div>
         </Toolbar>
 
-        <Box sx={{ height: 650, bgcolor: "#fff" }}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            disableSelectionOnClick
-            experimentalFeatures={{ newEditingApi: true }}
-          />
-        </Box>
+        {dataPost && (
+          <Box sx={{ height: 650, bgcolor: "#fff" }}>
+            <S_dataGrid
+              rows={rows}
+              columns={columns}
+              getRowId={(row) => row._id}
+              disableSelectionOnClick
+              experimentalFeatures={{ newEditingApi: true }}
+            />
+          </Box>
+        )}
       </Box>
     </NaviHome>
   );
 };
 
-export default Reward;
+export default Post;

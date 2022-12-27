@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import indexPageReducer from "./reducer";
+import { indexPageReducer, dataPostReducer } from "./reducer";
 export const store = configureStore({
   reducer: {
     indexPage: indexPageReducer,
+    dataPostReducer: dataPostReducer,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;
