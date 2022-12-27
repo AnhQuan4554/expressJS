@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
-const locationSchema = new mongoose.Schema({
-  imgAddress: {
+const paymentSchema = new mongoose.Schema({
+  imgEvent: {
     type: String,
   },
-  contentAddress: {
+  contentEvent: {
     type: String,
   },
-  location: {
+  money: {
     type: String,
   },
-  addedDate: {
+  usedDate: {
     type: String,
   },
   status: {
@@ -19,4 +19,4 @@ const locationSchema = new mongoose.Schema({
     type: String,
   },
 });
-export default mongoose.model("location", locationSchema);
+export default mongoose.model("payment", paymentSchema);

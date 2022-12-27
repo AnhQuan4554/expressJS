@@ -4,6 +4,8 @@ import routerUser from "./router/userRouter";
 import indexRouter from "./router/index";
 import postRouter from "./router/postRouter";
 import locationRouter from "./router/locationRouter";
+import rewardRouter from "./router/rewardRouter";
+import paymentRouter from "./router/paymentRouter";
 import { config } from "dotenv";
 import cors from "cors";
 config();
@@ -27,7 +29,9 @@ app.use(express.json());
 app.use(cors());
 app.use("/user", routerUser);
 app.use("/location", locationRouter);
+app.use("/reward", rewardRouter);
 app.use("/post", postRouter);
+app.use("/payment", paymentRouter);
 app.use("/", indexRouter);
 
 app.listen(port, () => {

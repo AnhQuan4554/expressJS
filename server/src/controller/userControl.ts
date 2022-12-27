@@ -6,7 +6,6 @@ dotenv.config();
 class UserController {
   async getUsers(req: Request, res: Response) {
     const data = await User.find();
-    console.log(data);
   }
 
   async userPostSignIn(req: Request, res: Response) {
@@ -17,7 +16,6 @@ class UserController {
         console.log("thất bại");
       } else {
         console.log(req.body, "dữ liệu đưa lên server là");
-        // await newUser.save();
       }
       const checkUser = await User.findOne({ name: data.email });
       console.log(checkUser);

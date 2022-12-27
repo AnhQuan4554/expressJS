@@ -7,7 +7,7 @@ class locationController {
     try {
       const data = await Location.find();
       data && res.json({ data: data });
-      console.log(data, `du lieu cua Location`);
+      // console.log(data, `du lieu cua Location`);
     } catch (error) {
       console.log(error, "Khong lay duoc du lieu LOcation");
       res.json("Khong Lay dc du lieu");

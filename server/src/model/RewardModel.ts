@@ -1,15 +1,18 @@
 import mongoose from "mongoose";
-const locationSchema = new mongoose.Schema({
-  imgAddress: {
+const rewardSchema = new mongoose.Schema({
+  id: {
     type: String,
   },
-  contentAddress: {
+  imgVocher: {
     type: String,
   },
-  location: {
+  contentVocher: {
     type: String,
   },
-  addedDate: {
+  expiredDate: {
+    type: String,
+  },
+  activeDate: {
     type: String,
   },
   status: {
@@ -19,4 +22,4 @@ const locationSchema = new mongoose.Schema({
     type: String,
   },
 });
-export default mongoose.model("location", locationSchema);
+export default mongoose.model("reward", rewardSchema);
