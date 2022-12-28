@@ -101,15 +101,25 @@ const Signin: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    if (!userForm.email || !userForm.password) {
+      alert("khong duoc bo trong");
+      return;
+    }
     try {
       const res = await axios.post(
         "http://localhost:5000/user/signin",
         userForm
       );
+      if (res.data.accessToken) {
+        window.localStorage.setItem(
+          "jwt",
+          JSON.stringify(res.data.accessToken)
+        );
+      }
       console.log(res.data.accessToken);
       res.data.user
         ? navigate("/overview")
-        : toast("🦄 Tên đăng nhập sai", {
+        : toast("🦄 Tên đăng nhập hoawc mk  sai", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -119,6 +129,7 @@ const Signin: React.FC = () => {
             progress: undefined,
             theme: "light",
           });
+      // store
     } catch (error) {
       console.log(error, "deo co du lieu");
     }

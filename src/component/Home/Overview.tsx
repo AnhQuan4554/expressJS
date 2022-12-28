@@ -71,7 +71,7 @@ const Overview: React.FC<any> = ({ show }) => {
                   />
                 </CardContent>
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="div">
+                  <Typography gutterBottom variant="h5" component="div">
                     Add a new post
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -112,8 +112,8 @@ const Overview: React.FC<any> = ({ show }) => {
                   />
                 </CardContent>
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="div">
-                    Add a new post
+                  <Typography gutterBottom variant="h5" component="div">
+                    Add a new location to the application map
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
@@ -151,8 +151,8 @@ const Overview: React.FC<any> = ({ show }) => {
                   />
                 </CardContent>
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="div">
-                    Add a new post
+                  <Typography gutterBottom variant="h5" component="div">
+                    Add new rewards and vouchers
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
@@ -188,8 +188,8 @@ const Overview: React.FC<any> = ({ show }) => {
                   />
                 </CardContent>
                 <CardContent>
-                  <Typography gutterBottom variant="h4" component="div">
-                    Add a new post
+                  <Typography gutterBottom variant="h5" component="div">
+                    Update the amount of used money for donations
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with

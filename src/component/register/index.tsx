@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   styled,
@@ -105,15 +105,20 @@ const Register = () => {
   const takeInforUser = (e: any) => {
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
+  const navigate = useNavigate();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // console.log(userForm);
+
     try {
-      const res = await await axios.post(
+      const res = await axios.post(
         "http://localhost:5000/user/register",
         userForm
       );
-    } catch (error) {}
+      console.log(res);
+      // navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <S_Register>
@@ -149,10 +154,10 @@ const Register = () => {
               </Typography>
             </InputLabel>
             <BootstrapInput
-              name="name"
+              name="email"
               onChange={(e) => takeInforUser(e)}
               defaultValue=""
-              placeholder="Enter your name"
+              placeholder="Enter your email"
               id="bootstrap-input"
             />
           </FormControl>

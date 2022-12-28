@@ -17,6 +17,7 @@ import { changeIndexPage, getDataLocation } from "../../store/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { RootState } from "../../store/store";
+import setAuthToken from "../signin/setAuth";
 const Location: React.FC<any> = () => {
   const S_dataGrid = styled(DataGrid)({
     "& .MuiDataGrid-columnHeaderTitle": {
@@ -54,6 +55,9 @@ const Location: React.FC<any> = () => {
     (state: RootState) => state.dataPostReducer.dataLocation
   );
   const renderDataLocation = async () => {
+    if (localStorage["jwt"]) {
+      setAuthToken(localStorage["jwt"]);
+    }
     try {
       const res = await axios.get("http://localhost:5000/location");
       const { data } = res.data;
