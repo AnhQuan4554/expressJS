@@ -9,7 +9,20 @@ const intialStateDetail: any = {
   dataReward: [],
   dataPayment: [],
 };
-
+const intialUser = {
+  userID: "",
+};
+const intialJWT = {
+  stateJWT: "",
+};
+export const changeIntialJWT = createAction<string>(
+  "intialJWT/changeIntialJWT"
+);
+const intialJWTReducer = createReducer(intialJWT, (builder) => {
+  builder.addCase(changeIntialJWT, (state, action) => {
+    state.stateJWT = action.payload;
+  });
+});
 export const changeIndexPage = createAction<number>(
   "indexPage/changeIndexPage"
 );
@@ -40,4 +53,10 @@ const dataPostReducer = createReducer(intialStateDetail, (builder) => {
     state.dataPayment = action.payload;
   });
 });
-export { indexPageReducer, dataPostReducer };
+export const getUserID = createAction("user/getUserID");
+const userReducer = createReducer(intialUser, (builder) => {
+  builder.addCase(getUserID, (state, action) => {
+    state.userID = action.payload as any;
+  });
+});
+export { indexPageReducer, dataPostReducer, userReducer, intialJWTReducer };

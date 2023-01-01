@@ -17,7 +17,6 @@ import { RootState } from "../../store/store";
 import { changeIndexPage, getDataPayment } from "../../store/reducer";
 import axios from "axios";
 import PaymentChildren from "../pageChildren/PaymentChildren";
-import setAuthToken from "../signin/setAuth";
 const Payment: React.FC<any> = () => {
   // CSS ---------------------------
   const S_dataGrid = styled(DataGrid)({
@@ -46,24 +45,6 @@ const Payment: React.FC<any> = () => {
   const dataPost = useSelector(
     (state: RootState) => state.dataPostReducer.dataPayment
   );
-  const renderDataPost = async () => {
-    if (localStorage["jwt"]) {
-      setAuthToken(localStorage["jwt"]);
-    }
-    try {
-      const res = await axios.get("http://localhost:5000/payment");
-      const { data } = res.data;
-
-      data && (await dispath(getDataPayment(data)));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    renderDataPost();
-  }, []);
-  console.log(dataPost);
   const columns: GridColDef[] = [
     {
       field: "logId",

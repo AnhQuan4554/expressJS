@@ -15,7 +15,6 @@ import NaviHome from "../Home/index";
 import { changeIndexPage, getDataReward } from "../../store/reducer";
 import RewardChildren from "../pageChildren/RewardChildren";
 import { RootState } from "../../store/store";
-import axios from "axios";
 
 const Post: React.FC<any> = () => {
   const S_dataGrid = styled(DataGrid)({
@@ -42,18 +41,6 @@ const Post: React.FC<any> = () => {
   const dataPost = useSelector(
     (state: RootState) => state.dataPostReducer.dataReward
   );
-  const renderDataPost = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/reward");
-      const { data } = res.data;
-      res.data && dispath(getDataReward(data));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    renderDataPost();
-  }, []);
 
   const columns: GridColDef[] = [
     {

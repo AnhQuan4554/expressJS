@@ -13,6 +13,8 @@ import InputBase from "@mui/material/InputBase";
 import imgRegister from "../../img/imgRegister.png";
 import imgLogo from "../../img/logoRegister.png";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { changeIntialJWT, getUserID } from "../../store/reducer";
 const S_Register = styled(Box)({
   width: `100%`,
   display: "flex",
@@ -87,6 +89,7 @@ const S_buttonNext = styled(Button)({
 });
 
 const Signin: React.FC = () => {
+  const dispath = useDispatch();
   interface stateForm {
     email: String;
     password: String;
@@ -110,13 +113,6 @@ const Signin: React.FC = () => {
         "http://localhost:5000/user/signin",
         userForm
       );
-      if (res.data.accessToken) {
-        window.localStorage.setItem(
-          "jwt",
-          JSON.stringify(res.data.accessToken)
-        );
-      }
-      console.log(res.data.accessToken);
       res.data.user
         ? navigate("/overview")
         : toast("🦄 Tên đăng nhập hoawc mk  sai", {
@@ -129,6 +125,23 @@ const Signin: React.FC = () => {
             progress: undefined,
             theme: "light",
           });
+      //đưa token lên local
+      if (res.data.accessToken) {
+        window.localStorage.setItem(
+          "jwt",
+          JSON.stringify(res.data.accessToken)
+        );
+
+        window.localStorage.setItem(
+          "email",
+          JSON.stringify(res.data.user.email)
+        );
+        // thay doi bien jwt de du lieu duoc cap nhat
+        dispath(changeIntialJWT(res.data.accessToken));
+      }
+
+      console.log(res, res.data.accessToken);
+
       // store
     } catch (error) {
       console.log(error, "deo co du lieu");

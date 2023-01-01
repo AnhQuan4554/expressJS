@@ -9,13 +9,11 @@ import {
   Dialog,
 } from "@mui/material";
 import { FiMoreHorizontal } from "react-icons/fi";
-
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import imgView from "../../img/imgMain/imgView.png";
 import PostChildren from "../pageChildren/PostChildren";
 import NaviHome from "../Home/index";
-import axios from "axios";
 import { changeIndexPage, getDataPost } from "../../store/reducer";
 import { RootState } from "../../store/store";
 
@@ -44,19 +42,7 @@ const Post: React.FC<any> = () => {
   const dataPost = useSelector(
     (state: RootState) => state.dataPostReducer.dataPost
   );
-  const renderDataPost = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/post");
-      const { data } = res.data;
-      res.data && dispath(getDataPost(data));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  // render mõi lần vào trang
-  useEffect(() => {
-    renderDataPost();
-  }, []);
+
   const columns: GridColDef[] = [
     {
       field: "id",

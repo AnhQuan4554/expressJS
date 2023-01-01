@@ -15,8 +15,9 @@ import addImg from "./imgPageChildren/addImg.svg";
 import FormSucess from "./FormSucess";
 import axios from "axios";
 import { storage } from "../../firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BeatLoader } from "react-spinners";
+import { RootState } from "../../store/store";
 const S_OverChildren = styled(Box)({
   padding: `10px 40px`,
   background: "#fff",
@@ -102,9 +103,11 @@ const currencies = [
   },
 ];
 
-const PostChildren: React.FC<any> = ({ setdataPost }) => {
+const PostChildren: React.FC<any> = () => {
   let [loading, setLoading] = useState(false);
-
+  const userIdStore = useSelector(
+    (state: RootState) => state.userReducer.userID
+  );
   const dispath = useDispatch();
   interface typePost {
     id: String;
@@ -122,7 +125,7 @@ const PostChildren: React.FC<any> = ({ setdataPost }) => {
     releaseDate: "",
     view: 300,
     status: "ONLINE",
-    userID: "QuanID",
+    userID: "",
   });
   const [currency, setCurrency] = useState<any>("EUR");
   const [location, setLocation] = useState<any>("Sydney");

@@ -16,6 +16,8 @@ import FormSucess from "./FormSucess";
 import axios from "axios";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../firebase";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 const S_OverChildren = styled(Box)({
   padding: `40px 40px`,
   // height: `1023px`,
@@ -115,7 +117,7 @@ const RewardChildren: React.FC<any> = () => {
     expiredDate: "",
     activeDate: "",
     status: "ONLINE",
-    userID: "QuanID",
+    userID: "",
   });
 
   //submit form | Creat Post
@@ -124,15 +126,12 @@ const RewardChildren: React.FC<any> = () => {
     const date = new Date();
     const imgPush = await uploadFile();
     try {
-      const res = await axios.post(
-        "http://localhost:5000/reward/creat-reward",
-        {
-          ...inforCreat,
-          imgVocher: `${imgPush}`,
-          expiredDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
-          activeDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
-        }
-      );
+      await axios.post("http://localhost:5000/reward/creat-reward", {
+        ...inforCreat,
+        imgVocher: `${imgPush}`,
+        expiredDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+        activeDate: `${date.getHours()}:${date.getMinutes()}  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+      });
       console.log("success");
     } catch (error) {
       console.log(error, "LOI CON ME NO ROI");
@@ -151,7 +150,12 @@ const RewardChildren: React.FC<any> = () => {
     setOpen(false);
   };
   const handleClickOpen = () => {
-    setOpen(true);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+
+      setOpen(true);
+    }, 2000);
   };
   const [urlImg, seturlImg] = useState("");
   const [urlImgFireBase, seturlImgFireBase] = useState<any>("");

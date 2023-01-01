@@ -16,6 +16,8 @@ import FormSucess from "./FormSucess";
 import axios from "axios";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../firebase";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 const S_OverChildren = styled(Box)({
   padding: `10px 40px`,
   background: "#fff",
@@ -103,6 +105,9 @@ const override: CSSProperties = {
 };
 //////////////////////////////////////////////////
 const LocationChildren = () => {
+  const userIdStore = useSelector(
+    (state: RootState) => state.userReducer.userID
+  );
   let [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [currency, setCurrency] = useState<any>("USA");
