@@ -1,16 +1,16 @@
-import express, { Request, Response, NextFunction, Router } from "express";
+import { Request, Response } from "express";
 import Post from "../model/PostModel";
 import dotenv from "dotenv";
 dotenv.config();
 class postController {
-  async renderPost(req: Request, res: Response) {
-    const data = await Post.find();
+  async renderPost(req: any, res: Response) {
+    const data = await Post.find({ userID: req.userID });
     res.json({ data: data });
   }
-  async creatPost(req: Request, res: Request) {
+  async creatPost(req: any, res: Request) {
     try {
       const data = req.body;
-      const newPost = new Post(data);
+      const newPost = new Post({ ...data, userID: req.userID });
       await newPost.save();
     } catch (error) {
       console.log(error);

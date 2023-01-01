@@ -19,7 +19,9 @@ const postSchema = new mongoose.Schema({
     type: String,
   },
   userID: {
-    type: String,
+    type: mongoose.Types.ObjectId,
+    ref: "users",
+    // type: String,
   },
 });
 export default mongoose.model("post", postSchema);

@@ -11,23 +11,17 @@ class UserController {
   async userPostSignIn(req: Request, res: Response) {
     try {
       const data = req.body;
-      const newUser = new User(data);
-      if (!newUser) {
-        console.log("thất bại");
-      } else {
-        console.log(req.body, "dữ liệu đưa lên server là");
-      }
-      const checkUser = await User.findOne({ name: data.email });
-      console.log(checkUser);
+
+      const currentUser = await User.findOne({
+        email: data.email,
+        password: data.password,
+      });
+
       const accessToken = jwt.sign(
-        { userID: newUser._id },
+        { userID: currentUser && currentUser._id },
         process.env.ACCESS_TOKEN_SECRET as Secret
       );
-      res.json({ accessToken: accessToken, user: checkUser });
-      // return res.json({
-      //   msg: "data insert success",
-      //   newUser,
-      // });
+      res.json({ accessToken: accessToken, user: currentUser });
     } catch (error) {
       console.log(error);
     }
@@ -36,11 +30,13 @@ class UserController {
     try {
       const data = req.body;
       const newUser = new User(data);
-      const checkExitUser = await User.findOne({ name: data.name });
-      console.log(checkExitUser);
+      // if (error) res.json({ message: error });
+      const checkExitUser = await User.findOne({ email: data.email });
       // kieemr tra xem cos ton tai hay chua
       if (checkExitUser != null) {
-        res.json({ errRegister: "Tên đăng nhập đã tồn tai" });
+        res.json({ meseage: `Tên đăng kí đã tồn tại` });
+
+        // res.json({ errRegister: "Tên đăng nhập đã tồn tai", data: data });
         return;
       }
       if (!newUser) {
@@ -49,6 +45,7 @@ class UserController {
         console.log(req.body, "dữ liệu đưa lên server là");
       }
       await newUser.save();
+      res.json({ success: " Đăng kí thành công" });
     } catch (err) {
       console.log(err);
     }

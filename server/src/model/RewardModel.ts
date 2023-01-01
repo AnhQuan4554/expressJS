@@ -19,7 +19,8 @@ const rewardSchema = new mongoose.Schema({
     type: String,
   },
   userID: {
-    type: String,
+    type: mongoose.Types.ObjectId,
+    ref: "users",
   },
 });
 export default mongoose.model("reward", rewardSchema);
