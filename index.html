@@ -9,10 +9,16 @@
   <body>
     <div class="silder">
       <div class="display">
-        <input type="radio" name="radio" class="inputRadio" />
-        <input type="radio" name="radio" class="inputRadio" />
-        <input type="radio" name="radio" class="inputRadio" />
-        <input type="radio" name="radio" class="inputRadio" />
+        <input type="radio" name="radio" class="inputRadio" id="checked1" />
+        <input type="radio" name="radio" class="inputRadio" id="checked2" />
+        <input type="radio" name="radio" class="inputRadio" id="checked3" />
+        <input type="radio" name="radio" class="inputRadio" id="checked4" />
+        <div class="wrapLable">
+          <label for="checked1">ds</label>
+          <label for="checked2"></label>
+          <label for="checked3"></label>
+          <label for="checked4"></label>
+        </div>
         <div class="arraySlider firstSlide">
           <div class="wrapItemSlider">
             <div class="itemSlider">
@@ -106,6 +112,7 @@
       overflow: hidden;
     }
     .arraySlider {
+      transition: all 2s;
       width: 400%;
       height: 493px;
       overflow: hidden;
