@@ -1,0 +1,29 @@
+ <p class="textTryOurtDemo">
+      Now you can build fast your awesome website with these ready-to-use
+      blocks, elements and sections.
+    </p>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .textTryOurtDemo {
+        padding: 0 100px;
+        text-align: center;
+        color: #fcfcfd;
+        font-size: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+        .textTryOurtDemo {
+          padding: 0;
+          font-size: 16px;
+        }
+      }
+      @media only screen and (min-width: 601px) and (max-width: 1440px) {
+        .textTryOurtDemo {
+          padding: 0;
+          font-size: 16px;
+        }
+      }
+    </style>
