@@ -7,183 +7,90 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="silder">
-      <div class="display">
-        <input type="radio" name="radio" class="inputRadio" id="checked1" />
-        <input type="radio" name="radio" class="inputRadio" id="checked2" />
-        <input type="radio" name="radio" class="inputRadio" id="checked3" />
-        <input type="radio" name="radio" class="inputRadio" id="checked4" />
-        <div class="wrapLable">
-          <label for="checked1">ds</label>
-          <label for="checked2"></label>
-          <label for="checked3"></label>
-          <label for="checked4"></label>
-        </div>
-        <div class="arraySlider firstSlide">
-          <div class="wrapItemSlider">
-            <div class="itemSlider">
-              <img
-                src="https://scontent.fhan4-2.fna.fbcdn.net/v/t39.30808-6/323358242_1238576033669305_347413973174626052_n.jpg?stp=cp0_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=cNDXKN26NlMAX9YxPVE&_nc_ht=scontent.fhan4-2.fna&oh=00_AfBzZjwAEvOROeaklhGI7vANnctGfO-ZsGMdeBXfEPYbjA&oe=63BE6A74"
-                alt=""
-              />
-              <p>
-                FIRST E2Language is a global provider of high-stakes English
-                exam preparation.We decided to switch from another pronunciation
-                evaluations provider to Language Confidence because their
-                product and customer support is superior
-              </p>
-              <div class="infor">
-                <h3>Jarrad Merlo</h3>
-                <p>Director of E2 Language</p>
-              </div>
-            </div>
-          </div>
-          <div class="wrapItemSlider">
-            <div class="itemSlider">
-              <img
-                src="https://scontent.fhan4-2.fna.fbcdn.net/v/t39.30808-6/323358242_1238576033669305_347413973174626052_n.jpg?stp=cp0_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=cNDXKN26NlMAX9YxPVE&_nc_ht=scontent.fhan4-2.fna&oh=00_AfBzZjwAEvOROeaklhGI7vANnctGfO-ZsGMdeBXfEPYbjA&oe=63BE6A74"
-                alt=""
-              />
-              <p>
-                SEcond E2Language is a global provider of high-stakes English
-                exam preparation.We decided to switch from another pronunciation
-                evaluations provider to Language Confidence because their
-                product and customer support is superior
-              </p>
-              <div class="infor">
-                <h3>Jarrad Merlo</h3>
-                <p>Director of E2 Language</p>
-              </div>
-            </div>
-          </div>
-          <div class="wrapItemSlider">
-            <div class="itemSlider">
-              <img
-                src="https://scontent.fhan4-2.fna.fbcdn.net/v/t39.30808-6/323358242_1238576033669305_347413973174626052_n.jpg?stp=cp0_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=cNDXKN26NlMAX9YxPVE&_nc_ht=scontent.fhan4-2.fna&oh=00_AfBzZjwAEvOROeaklhGI7vANnctGfO-ZsGMdeBXfEPYbjA&oe=63BE6A74"
-                alt=""
-              />
-              <p>
-                E2Language is a global provider of high-stakes English exam
-                preparation.We decided to switch from another pronunciation
-                evaluations provider to Language Confidence because their
-                product and customer support is superior
-              </p>
-              <div class="infor">
-                <h3>Jarrad Merlo</h3>
-                <p>Director of E2 Language</p>
-              </div>
-            </div>
-          </div>
-          <div class="wrapItemSlider">
-            <div class="itemSlider">
-              <img
-                src="https://scontent.fhan4-2.fna.fbcdn.net/v/t39.30808-6/323358242_1238576033669305_347413973174626052_n.jpg?stp=cp0_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=cNDXKN26NlMAX9YxPVE&_nc_ht=scontent.fhan4-2.fna&oh=00_AfBzZjwAEvOROeaklhGI7vANnctGfO-ZsGMdeBXfEPYbjA&oe=63BE6A74"
-                alt=""
-              />
-              <p>
-                E2Language is a global provider of high-stakes English exam
-                preparation.We decided to switch from another pronunciation
-                evaluations provider to Language Confidence because their
-                product and customer support is superior
-              </p>
-              <div class="infor">
-                <h3>Jarrad Merlo</h3>
-                <p>Director of E2 Language</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="wrapSwitchHome">
+      <div class="switchHome">
+        <input type="radio" name="switch" id="switch1" checked />
+        <input type="radio" name="switch" id="switch2" />
+        <div class="backGroundSwitch"></div>
+        <label class="customSwitch" for="switch1"
+          ><p id="customText1">Pronunciation</p></label
+        >
+        <label class="customSwitch" for="switch2"
+          ><p id="customText2">IELTS Assessment</p></label
+        >
       </div>
     </div>
+    <style>
+      .wrapSwitchHome {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+      }
+      .switchHome {
+        height: 56px;
+
+        width: 806px;
+        display: flex;
+        align-items: center;
+        background: #e6e8ec;
+        border-radius: 44px;
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        position: relative;
+        margin: 36px 0;
+      }
+      .customSwitch {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 44px;
+        transition: all 1s;
+      }
+      .customSwitch p {
+        z-index: 2;
+        transition: all 2s;
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+      }
+      .backGroundSwitch {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #3ba09e;
+        border-radius: 44px;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+      .switchHome input {
+        display: none;
+      }
+      #switch1:checked ~ .backGroundSwitch ~ .customSwitch > #customText1 {
+        color: #fff;
+      }
+
+      #switch1:checked ~ .backGroundSwitch {
+        left: 0;
+      }
+      #switch2:checked ~ .backGroundSwitch {
+        left: 100%;
+        transform: translateX(-100%);
+      }
+      #switch2:checked ~ .backGroundSwitch ~ .customSwitch > #customText2 {
+        color: #fff;
+      }
+    </style>
   </body>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    .silder {
-      height: 493px;
-      width: 100%;
-      position: relative;
-    }
-    .display {
-      width: 100vw;
-      overflow: hidden;
-    }
-    .arraySlider {
-      transition: all 2s;
-      width: 400%;
-      height: 493px;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .wrapItemSlider {
-      width: 25%;
-      padding: 0 300px;
-    }
-    .itemSlider {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 473px;
-      border: 1px solid #3ba09e;
-      border-radius: 14px;
-      padding: 40px;
-    }
-
-    .itemSlider p {
-      width: 456px;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 150%;
-      color: #353945;
-    }
-    .itemSlider img {
-      width: 85px;
-      height: 85px;
-    }
-
-    .itemSlider .infor h3 {
-      color: #3ba09e;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 180%;
-      margin: 0;
-    }
-    .itemSlider .infor p {
-      color: #777e91;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      margin: 0;
-    }
-    .cicrle {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 1px solid #3ba09e;
-      margin-left: 4px;
-    }
-    .inputRadio:nth-child(1):checked ~ .firstSlide {
-      margin-left: -0%;
-    }
-    .inputRadio:nth-child(2):checked ~ .firstSlide {
-      margin-left: -100vw;
-    }
-    .inputRadio:nth-child(3):checked ~ .firstSlide {
-      margin-left: -200vw;
-    }
-    .inputRadio:nth-child(4):checked ~ .firstSlide {
-      margin-left: -300vw;
-    }
-  </style>
 </html>
