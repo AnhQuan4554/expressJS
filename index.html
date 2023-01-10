@@ -7,89 +7,84 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="wrapSwitchHome">
-      <div class="switchHome">
-        <input type="radio" name="switch" id="switch1" checked />
-        <input type="radio" name="switch" id="switch2" />
-        <div class="backGroundSwitch"></div>
-        <label class="customSwitch" for="switch1"
-          ><p id="customText1">Pronunciation</p></label
-        >
-        <label class="customSwitch" for="switch2"
-          ><p id="customText2">IELTS Assessment</p></label
-        >
+    <div class="homePage_banner">
+      <h1 style="border: none" class="homePage_banner_h1">
+        Automate the <span style="color: #3ba09e">teaching</span>
+      </h1>
+      <h1 class="homePage_banner_h1">
+        of <span style="color: #eb9616">spoken English</span> for your students.
+      </h1>
+      <div class="homePage_banner_content">
+        <p>
+          We provide API access to our leading-edge AI Speech Assessment Toolkit
+          that automates the teaching and testing of spoken English for your
+          students. Your students can practice their spoken English anytime,
+          anywhere.
+        </p>
       </div>
     </div>
+    <img
+      src="https://files.umso.co/lib_MhVztoOVpWskisWc/r2ml7o870d5ahis7.png"
+      alt=""
+    />
+
     <style>
-      .wrapSwitchHome {
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 56px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .switchHome {
-        height: 56px;
-
-        width: 806px;
-        display: flex;
-        align-items: center;
-        background: #e6e8ec;
-        border-radius: 44px;
-        color: #777e91;
-        font-family: "Inter";
+      .homePage_banner {
+        padding: 0 100px;
+      }
+      .homePage_banner_h1:nth-child(1) {
+        font-family: "Poppins";
         font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 150%;
-        position: relative;
-        margin: 36px 0;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 135%;
+        color: #23262f;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
-      .customSwitch {
-        width: 50%;
-        height: 100%;
+      .homePage_banner h1:nth-child(2) {
+        margin-top: -20px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 135%;
+        color: #23262f;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      .homePage_banner_content {
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-radius: 44px;
-        transition: all 1s;
-      }
-      .customSwitch p {
-        z-index: 2;
-        transition: all 2s;
-        color: #777e91;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 150%;
-      }
-      .backGroundSwitch {
-        width: 50%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        background: #3ba09e;
-        border-radius: 44px;
-        z-index: 1;
-        transition: all 0.5s;
+        margin: auto;
+        width: 80%;
       }
-      .switchHome input {
-        display: none;
+      .homePage_banner_content p {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        color: #777e91;
       }
-      #switch1:checked ~ .backGroundSwitch ~ .customSwitch > #customText1 {
-        color: #fff;
-      }
-
-      #switch1:checked ~ .backGroundSwitch {
-        left: 0;
-      }
-      #switch2:checked ~ .backGroundSwitch {
-        left: 100%;
-        transform: translateX(-100%);
-      }
-      #switch2:checked ~ .backGroundSwitch ~ .customSwitch > #customText2 {
-        color: #fff;
+      @media only screen and (max-width: 600px) {
+        .homePage_banner {
+          padding: 0;
+        }
+        .homePage_banner h1:nth-child(1) {
+          font-size: 20px;
+        }
+        .homePage_banner h1:nth-child(2) {
+          font-size: 20px;
+          padding: 0 50px;
+          margin-top: -30px;
+        }
+        .homePage_banner_content p {
+          font-size: 20px;
+        }
       }
     </style>
   </body>
