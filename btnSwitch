@@ -1,0 +1,105 @@
+ <div class="wrapSwitchHome">
+      <div class="switchHome">
+        <input type="radio" name="switch" id="switch1" checked />
+        <input type="radio" name="switch" id="switch2" />
+        <div class="backGroundSwitch"></div>
+        <label class="customSwitch" for="switch1"
+          ><p id="customText1">Pronunciation</p></label
+        >
+        <label class="customSwitch" for="switch2"
+          ><p id="customText2">IELTS Assessment</p></label
+        >
+      </div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapSwitchHome {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        margin: 36px 0;
+      }
+      .switchHome {
+        height: 56px;
+
+        width: 806px;
+        display: flex;
+        align-items: center;
+        background: #e6e8ec;
+        border-radius: 44px;
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        position: relative;
+      }
+      .customSwitch {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 44px;
+      }
+      .customSwitch p {
+        z-index: 2;
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+      }
+      .backGroundSwitch {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #3ba09e;
+        border-radius: 44px;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+      .switchHome input {
+        display: none;
+      }
+      #switch1:checked ~ .backGroundSwitch ~ .customSwitch > #customText1 {
+        color: #fff;
+      }
+
+      #switch1:checked ~ .backGroundSwitch {
+        left: 0;
+      }
+      #switch2:checked ~ .backGroundSwitch {
+        left: 100%;
+        transform: translateX(-100%);
+      }
+      #switch2:checked ~ .backGroundSwitch ~ .customSwitch > #customText2 {
+        color: #fff;
+      }
+      @media only screen and (max-width: 600px) {
+        .wrapSwitchHome {
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .switchHome {
+          width: 90vw;
+          height: 34px;
+        }
+      }
+      @media only screen and (min-width: 601px) {
+        .switchHome {
+          width: 90vw;
+        }
+      }
+    </style>
