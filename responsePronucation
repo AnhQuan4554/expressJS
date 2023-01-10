@@ -1,0 +1,231 @@
+ <div class="pronunctionCustom">
+      <div class="pronunctionCustom_element">
+        <div class="pronunctionCustom_element_left">
+          <div class="pronunctionCustom_item">
+            <img
+              src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/324414222_1252498985363313_7424335066516963423_n.jpg?stp=cp0_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=5AuFxtwhZpcAX9q5wyn&_nc_ht=scontent.fhan2-3.fna&oh=00_AfAYzusJhhAj3zSleDjEE0eragpBpWDZwN7OBJC7jh_yqA&oe=63C16948"
+              alt=""
+            />
+            <div class="pronunctionCustom_item_content">
+              <h3
+                style="
+                  color: #000b33;
+                  font-weight: 700;
+                  font-size: 20px;
+                  margin-bottom: 12px;
+                "
+              >
+                Corrective Feedback on Phonemes
+              </h3>
+              <p
+                style="
+                  color: #000b33;
+                  opacity: 0.7;
+                  font-size: 16px;
+                  font-weight: 400;
+                  width: 310px;
+                "
+              >
+                Our AI identifies which phonemes were mispronounced and shows
+                which phoneme was spoken instead.
+              </p>
+            </div>
+          </div>
+          <div class="pronunctionCustom_item">
+            <img
+              src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/323924588_723517919077939_7830496585461797658_n.jpg?stp=cp0_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=rQOe5sUZY9AAX_Fwp-C&_nc_ht=scontent.fhan2-4.fna&oh=00_AfBzMQZOmmqAajgt2_GwWDhxX5ch9c2YfYZDYRSJ7iL_mg&oe=63C0EBAE"
+              alt=""
+            />
+            <div class="pronunctionCustom_item_content">
+              <h3
+                style="
+                  color: #000b33;
+                  font-weight: 700;
+                  font-size: 20px;
+                  margin-bottom: 12px;
+                "
+              >
+                Corrective Feedback on Phonemes
+              </h3>
+              <p
+                style="
+                  color: #000b33;
+                  opacity: 0.7;
+                  font-size: 16px;
+                  font-weight: 400;
+                  width: 310px;
+                "
+              >
+                Our AI can assess a speaker's pronunciation based on US and UK
+                accents.
+              </p>
+            </div>
+          </div>
+          <div class="pronunctionCustom_item">
+            <img
+              src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/324113864_3292198351041973_7491081444282338794_n.jpg?stp=cp0_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=khXaXI6OnL0AX_bWZ6u&_nc_ht=scontent.fhan2-5.fna&oh=00_AfD44QTwVfHEee0foNRAu_ZEAZlSroZpCZwjjVTL03ZdNg&oe=63C02F5E"
+              alt=""
+            />
+            <div class="pronunctionCustom_item_content">
+              <h3
+                style="
+                  color: #000b33;
+                  font-weight: 700;
+                  font-size: 20px;
+                  margin-bottom: 12px;
+                "
+              >
+                Corrective Feedback on Phonemes
+              </h3>
+              <p
+                style="
+                  color: #000b33;
+                  opacity: 0.7;
+                  font-size: 16px;
+                  font-weight: 400;
+                  width: 310px;
+                "
+              >
+                Our AI produces mock English proficiency scores with a
+                consistent approach for evaluation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pronunctionCustom_element">
+        <h1>Pronunciation</h1>
+        <p>
+          Our pronunciation assessment gives speakers feedback using the
+          Oxford-certified International Phonetic Alphabet (IPA). It returns
+          scores at the transcript, word and even phoneme level that indicate
+          how close the speaker is to correctly pronouncing the phonemes.
+        </p>
+        <button>Try our demo</button>
+      </div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #customPronunciation {
+        min-height: 0px !important;
+      }
+      .pronunctionCustom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 96px 0px;
+      }
+      .pronunctionCustom_element_left {
+        width: 50%;
+      }
+      .pronunctionCustom_element {
+        margin: auto;
+      }
+      .pronunctionCustom_element:nth-child(1) {
+        width: 50%;
+        background: url(https://files.umso.co/lib_MhVztoOVpWskisWc/fre1mys2ebsg2d57.png);
+        display: flex;
+        justify-content: center;
+      }
+      .pronunctionCustom_element:nth-child(2) h1 {
+        color: #18214d;
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .pronunctionCustom_element:nth-child(2) p {
+        width: 524px;
+        color: #777e91;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 180%;
+      }
+      .pronunctionCustom_element:nth-child(2) button {
+        border: none;
+        border-radius: 44px;
+        cursor: pointer;
+        width: 264px;
+        height: 64px;
+        background-color: #3ba09e;
+        color: #fcfcfd;
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 56px;
+      }
+      .pronunctionCustom_item {
+        width: 473px;
+        display: flex;
+        align-items: flex-start;
+        background: #ffffff;
+        box-shadow: 0px 4px 40px rgba(59, 160, 158, 0.15);
+        border-radius: 10px;
+        padding: 32px 30px;
+        margin-bottom: 18px;
+      }
+      .pronunctionCustom_item:nth-child(1) {
+        margin-left: -40px;
+      }
+      .pronunctionCustom_item:nth-child(2) {
+        margin-left: -115px;
+      }
+      .pronunctionCustom_item:nth-child(3) {
+        margin-left: 8px;
+      }
+      .pronunctionCustom_item_content {
+        margin-left: 20px;
+      }
+      @media screen and (max-width: 600px) {
+        .pronunctionCustom {
+          padding: unset;
+          display: unset;
+        }
+        .pronunctionCustom_element {
+          display: unset;
+        }
+        .pronunctionCustom_element_left {
+          width: unset;
+        }
+        .pronunctionCustom_item {
+          width: unset;
+          padding: 20px 0;
+        }
+        .pronunctionCustom_item_content {
+          margin-left: 10px;
+        }
+        .pronunctionCustom_item:nth-child(1) {
+          margin-left: 0;
+        }
+        .pronunctionCustom_item:nth-child(2) {
+          margin-left: 0;
+        }
+        .pronunctionCustom_item:nth-child(3) {
+          margin-left: 0;
+        }
+        .pronunctionCustom_element:nth-child(2) h1 {
+          font-size: 30px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .pronunctionCustom_element:nth-child(2) p {
+          width: unset;
+          line-height: 120%;
+          font-size: 16px;
+          text-align: center;
+        }
+        .pronunctionCustom_element:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .pronunctionCustom_element:nth-child(2) button {
+          width: 152px;
+          height: 32px;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+    </style>
