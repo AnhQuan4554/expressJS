@@ -179,18 +179,22 @@
         margin-left: 20px;
       }
       @media screen and (max-width: 600px) {
-        .pronunctionCustom {
+       .pronunctionCustom {
+          margin-top: 50px;
           padding: unset;
-          display: unset;
+          display: flex;
+          flex-direction: column-reverse;
         }
         .pronunctionCustom_element {
           display: unset;
+          margin-bottom: 20px;
         }
         .pronunctionCustom_element_left {
           width: unset;
         }
         .pronunctionCustom_item {
           width: unset;
+        
           padding: 20px 0;
         }
         .pronunctionCustom_item_content {
@@ -201,6 +205,7 @@
         }
         .pronunctionCustom_item:nth-child(2) {
           margin-left: 0;
+          
         }
         .pronunctionCustom_item:nth-child(3) {
           margin-left: 0;
