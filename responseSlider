@@ -254,7 +254,7 @@
       width: 100vw;
     }
     .itemSlider{
-      width: 100vw;
+      width: 95vw;
       padding: 10px;
       height: unset;
       min-height: 300px;
