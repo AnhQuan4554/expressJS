@@ -276,5 +276,30 @@
   }
   }
   @media only screen and (min-width: 601px) and (max-width: 1440px) {
-
+  .wrapItemSlider{
+      width: 100vw;
+      margin-right: 0;
+    }
+    .itemSlider{
+      width: 100vw;
+      
+      padding: 10px;
+      height: unset;
+      min-height: 300px;
+    }
+    .itemSlider p{
+      width: unset;
+      font-size: 16px;
+      line-height: 120%;
+      margin-top: 0;
+    }
+    .inputRadio:nth-child(2):checked ~ .firstSlide {
+    margin-left: calc(-100vw ) ;
+  }
+  .inputRadio:nth-child(3):checked ~ .firstSlide {
+    margin-left: calc(-200vw ) ;
+  }
+  .inputRadio:nth-child(4):checked ~ .firstSlide {
+    margin-left: calc(-300vw ) ;
+  }
   }
