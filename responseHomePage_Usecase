@@ -1,0 +1,202 @@
+ <div class="useCaseCustom">
+      <div class="useCaseChildren" style="margin-right: 150px">
+        <img
+          src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/321154381_492108543036595_8311684742559971174_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=6LzSbfalxEMAX_WHMn2&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBkJ7a7JUia5q19AfZqmNfskHUbP3UjBpR6MnF7ENRD0g&oe=63BF166D"
+          alt=""
+        />
+      </div>
+      <div class="useCaseChildren">
+        <h2>Use case</h2>
+        <p>
+          Now you can build fast your awesome website with these ready-to-use
+          blocks, elements and sections.
+        </p>
+        <div class="arrayInforUseCase">
+          <div class="iteamInforUseCase">
+            <img
+              src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/321200394_1247845439104613_2466671204171275655_n.jpg?stp=cp0_dst-jpg&_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=Q3v-NQbNccYAX9nlk8V&tn=t9PCorbiM6jIXVGh&_nc_ht=scontent.fhan19-1.fna&oh=00_AfAfebC9tWjui_rnf3pOcrr6TSQ7Q5qGQs3wrAKSOyhDRw&oe=63BEECC8"
+              alt=""
+            />
+            <div class="iteamInforUseCase_content">
+              <h4>High-stakes test preparation</h4>
+              <p>
+                Use our APIs to prepare your students for their IELTS, PTE or
+                TOEFL tests, in giving them real-time, detailed feedback in the
+                same format as these recognised tests!
+              </p>
+            </div>
+          </div>
+          <div class="iteamInforUseCase">
+            <img
+              src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/323772060_1221560912094093_5140740585519206907_n.jpg?stp=cp0_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=Nh3ByYAWy3EAX8JanVY&_nc_ht=scontent.fhan19-1.fna&oh=00_AfDsq6BfNqvkp2j4DQtgWhtKUEZr9QbtNiQUv6YliEy1dQ&oe=63BFCEC9"
+              alt=""
+            />
+            <div class="iteamInforUseCase_content">
+              <h4>Mobile, B2C Application</h4>
+              <p>
+                Increase the learning, engagement, retention and conversion of
+                your users by integrating our APIs into your web or mobile app!
+              </p>
+            </div>
+          </div>
+          <div class="iteamInforUseCase">
+            <img
+              src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/322731849_1363054934463408_447909464709565914_n.jpg?stp=cp0_dst-jpg&_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=ZLCzD2LPQDcAX-XPrLV&tn=t9PCorbiM6jIXVGh&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBBNQUlr-AQBp-9FPVl7tQBQVTEMqmV9plYHVDs5Xhi2w&oe=63C08220"
+              alt=""
+            />
+            <div class="iteamInforUseCase_content">
+              <h4>General, Tertiary English</h4>
+              <p>
+                Get your students ready for the real world by integrating our
+                APIs into your LMS to prepare the for the workforce.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="btnUseCase">Try our demo</button>
+      </div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      p {
+        margin: 0;
+      }
+      .useCaseCustom {
+        display: flex;
+        align-items: center;
+      }
+      .useCaseChildren {
+        width: 50%;
+      }
+      .useCaseChildren h2 {
+        color: #141416;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 72px;
+        margin-bottom: 12px;
+      }
+      .useCaseChildren p {
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        width: 590px;
+      }
+      .arrayInforUseCase {
+        display: flex;
+        flex-direction: column;
+        margin-top: 38px;
+      }
+      .iteamInforUseCase {
+        border: 1px solid #e6e8ec;
+        border-radius: 8px;
+        width: 590px;
+        padding: 20px;
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .iteamInforUseCase img {
+        width: 30px;
+        height: 30px;
+      }
+      .iteamInforUseCase_content {
+        margin-left: 10px;
+      }
+      .iteamInforUseCase_content h4 {
+        color: #3ba09e;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 180%;
+      }
+      .iteamInforUseCase_content p {
+        width: 432px;
+        color: #777e91;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+      }
+      .btnUseCase {
+        background: #3ba09e;
+        border-radius: 45px;
+        width: 224px;
+        height: 64px;
+        border: none;
+        text-align: center;
+        color: #fcfcfd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        margin-top: 38px;
+      }
+      @media only screen and (max-width: 600px) {
+        .useCaseCustom {
+          display: unset;
+        }
+        .useCaseChildren:nth-child(1) img {
+          width: 95vw;
+        }
+        .useCaseChildren:nth-child(2) {
+          width: 90vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .useCaseChildren:nth-child(2) p {
+          width: unset;
+          list-style: unset;
+          font-size: 16px;
+          padding: 0 20px;
+        }
+        .arrayInforUseCase {
+          padding: 0 20px;
+        }
+        .iteamInforUseCase {
+          width: unset;
+        }
+        .btnUseCase {
+          margin: unset;
+          width: 200px;
+          height: 34px;
+        }
+      }
+      @media only screen and (min-width: 601px) and (max-width: 1440px) {
+        .useCaseCustom {
+          display: unset;
+        }
+        .useCaseChildren:nth-child(1) img {
+          width: 95vw;
+        }
+        .useCaseChildren:nth-child(2) {
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .useCaseChildren:nth-child(2) p {
+          text-align: center;
+        }
+        .arrayInforUseCase {
+          padding: 0 20px;
+        }
+        .iteamInforUseCase {
+          width: unset;
+        }
+        .btnUseCase {
+          margin: unset;
+        }
+      }
+    </style>
