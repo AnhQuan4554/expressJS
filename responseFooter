@@ -1,0 +1,225 @@
+ <div class="footerCustom">
+      <div class="itemFooter">
+        <div class="arrayColumn">
+          <div class="itemColumn">
+            <h4 style="color: #18214d; font-weight: 500">First Column</h4>
+            <h4><a href="" style="color: #5c6077">First Link </a></h4>
+            <h4><a href="" style="color: #5c6077">Second Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Third Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fourth Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fifth Link</a></h4>
+          </div>
+          <div class="itemColumn">
+            <h4 style="color: #18214d; font-weight: 500">First Column</h4>
+            <h4><a href="" style="color: #5c6077">First Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Second Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Third Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fourth Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fifth Link</a></h4>
+          </div>
+          <div class="itemColumn">
+            <h4 style="color: #18214d; font-weight: 500">First Column</h4>
+            <h4><a href="" style="color: #5c6077">First Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Second Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Third Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fourth Link</a></h4>
+            <h4><a href="" style="color: #5c6077">Fifth Link</a></h4>
+          </div>
+        </div>
+      </div>
+      <div class="itemFooter">
+        <h3>Receive latest news</h3>
+        <div class="btnFooter">
+          <input type="text" placeholder="Enter your e-mail address" />
+          <button>Submit</button>
+        </div>
+        <p>
+          By entering your e-mail address you confirm that you’re agree to
+          subscribe to our newsletter.
+        </p>
+      </div>
+    </div>
+    <div class="lastFooter">
+      <div class="lastFooter_item">
+        <a
+          href="
+      "
+          ><img
+            src="https://scontent.fhan3-5.fna.fbcdn.net/v/t39.30808-6/323424827_861826838301879_6405818623653207068_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=4M2yw-an8GwAX9yDtHX&_nc_ht=scontent.fhan3-5.fna&oh=00_AfCccBi7g7L6pwYuLy_cnYlLye-Rye6iTiL1SRcQfD9r3g&oe=63BE9320"
+            alt=""
+        /></a>
+      </div>
+      <div class="lastFooter_item">
+        <div class="lastFooter_item_arrayIcon">
+          <a href="">
+            <img
+              src="https://scontent.fhan4-1.fna.fbcdn.net/v/t39.30808-6/323933971_715551473318302_3689826340924894121_n.jpg?stp=cp0_dst-jpg&_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=MDmNhe4c0VgAX_0Qq5u&_nc_ht=scontent.fhan4-1.fna&oh=00_AfBDCKSalu5unFS53yZ_kHQNi99y0Kixvhcfa0_8csF52g&oe=63BE62CC"
+              alt=""
+          /></a>
+          <a
+            href="
+          "
+          >
+            <img
+              src="https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-6/323889234_1221876998402679_129557945902522209_n.jpg?stp=cp0_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=COq5agwR9acAX-v2vMZ&_nc_ht=scontent.fhan3-4.fna&oh=00_AfCCoEzB_gVwj4Kptrvp5g8UuLFIes1yB18U0gHYylJp5Q&oe=63BE4FF4"
+              alt=""
+          /></a>
+          <a
+            href="
+     "
+          >
+            <img
+              src="https://scontent.fhan3-5.fna.fbcdn.net/v/t39.30808-6/322719202_642637407617016_2698550113727388789_n.jpg?stp=cp0_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=VlstWz2q-N0AX_SfbZS&_nc_oc=AQm-3yBmbwqEdxKEDDFndwS9Y5FndyGMfa8KLaJTHzuuPH0Q0y608rTAUkUTb6f7qFw&_nc_ht=scontent.fhan3-5.fna&oh=00_AfBASVoBWz_MsEpeJcQnIxP0BwxwF34vUeT0j6-bZXXg5Q&oe=63BFB904"
+              alt=""
+          /></a>
+          <a
+            href="
+       "
+            ><img
+              src="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-6/322871278_1112734736059295_208825546319577410_n.jpg?stp=cp0_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=eX9sPeI-pAEAX_DLDpb&_nc_ht=scontent.fhan3-1.fna&oh=00_AfD_MlBS3lM4D-6uc1grwzjdPpEOgKkbJ-MYc1iJgRbDeg&oe=63BF1646"
+              alt=""
+          /></a>
+          <a href="">
+            <img
+              src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-6/323373568_526414806120066_2062045479671257111_n.jpg?stp=cp0_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=my6m2AaD4HUAX9IOX0Y&tn=t9PCorbiM6jIXVGh&_nc_ht=scontent.fhan3-3.fna&oh=00_AfBgXwaWGq7_FXTDhuDRFQYD76CAAacSyWT78V6ksdE8yQ&oe=63BE2578"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .footerCustom {
+        display: flex;
+        justify-content: space-between;
+      }
+      .itemFooter {
+        width: 50%;
+        margin-left: 60px;
+      }
+      .itemFooter h3 {
+        color: #18214d;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      .itemFooter p {
+        width: 330px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #9fa4bc;
+        width: 330px;
+        margin-top: 16px;
+      }
+      .arrayColumn {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .itemColumn {
+        display: flex;
+        flex-direction: column;
+      }
+      .itemColumn h4 {
+        margin: 12px 0;
+        color: #5c6077;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 180%;
+      }
+      .itemColumn h4 a {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        color: #5c6077;
+      }
+      .btnFooter {
+        display: flex;
+        align-items: center;
+      }
+      .btnFooter input {
+        background: #f3f5f8;
+        border-radius: 58px;
+        width: 330px;
+        height: 68px;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        color: #9fa4bc;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .btnFooter button {
+        margin-top: 0;
+        background: #3ba09e;
+        border-radius: 51px;
+        width: 176px;
+        height: 68px;
+        margin-left: 28px;
+        border: none;
+        color: #fcfcfd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+      }
+      .lastFooter {
+        margin-top: 114px;
+        padding: 38px 60px;
+        padding-left: 53px;
+        padding-right: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+      .lastFooter::after {
+        content: " ";
+        width: 85%;
+        height: 1px;
+        background-color: #e6e8ec;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .lastFooter_item_arrayIcon img {
+        margin-left: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+        .footerCustom {
+          width: 100vw;
+          display: unset;
+        }
+        .itemFooter {
+          width: 100%;
+          margin-left: 0;
+        }
+        .arrayColumn {
+          justify-content: space-between;
+        }
+        .itemFooter h3 {
+          text-align: center;
+        }
+        .btnFooter {
+          flex-direction: column;
+        }
+        .btnFooter button {
+          margin-top: 20px;
+        }
+        .itemFooter p {
+          text-align: center;
+        }
+        .lastFooter {
+          margin-top: 50px;
+          padding: 0;
+          flex-direction: column;
+        }
+      }
+    </style>
