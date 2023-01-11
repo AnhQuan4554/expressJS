@@ -1,0 +1,30 @@
+  <div class="wrapIcon_MyTeam">
+      <img
+        src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/323373568_526414806120066_2062045479671257111_n.jpg?stp=cp0_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=my6m2AaD4HUAX88QHp4&tn=t9PCorbiM6jIXVGh&_nc_ht=scontent.fhan19-1.fna&oh=00_AfDufCBFIP_nxiROBHlojhrsFYHC2fg6NsyXxjS0J_davA&oe=63C01FB8"
+        alt=""
+      />
+
+      <img
+        src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/322871278_1112734736059295_208825546319577410_n.jpg?stp=cp0_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=eX9sPeI-pAEAX9_QhZE&_nc_ht=scontent.fhan19-1.fna&oh=00_AfCB1Oanz9FzzN4m_dWAgcL8lF1EBBR7U88l3uQsPhdHxg&oe=63BF1646"
+        alt=""
+      />
+      <img
+        src="https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/322719202_642637407617016_2698550113727388789_n.jpg?stp=cp0_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=B51d-osy0pkAX8HRDAB&_nc_oc=AQn_bBrEzSO5F0mOZs_MkAIlPEWm9FONW22mI73kTh0vxX5VZozwOchAmz_jq9QZZQI&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBrhahh8Hnjxfd-3RR5gpgRHutZ-NrD3NAc2cfFUHX-SQ&oe=63BFB904"
+        alt=""
+      />
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 600px) {
+        .wrapIcon_MyTeam {
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    </style>
