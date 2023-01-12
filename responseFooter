@@ -1,4 +1,4 @@
- <div class="footerCustom">
+  <div class="footerCustom">
       <div class="itemFooter">
         <div class="arrayColumn">
           <div class="itemColumn">
@@ -33,17 +33,19 @@
           <input type="text" placeholder="Enter your e-mail address" />
           <button>Submit</button>
         </div>
-        <p>
-          By entering your e-mail address you confirm that you’re agree to
-          subscribe to our newsletter.
-        </p>
+        <div class="textExplant_Footer">
+          <p>
+            By entering your e-mail address you confirm that you’re agree to
+            subscribe to our newsletter.
+          </p>
+        </div>
       </div>
     </div>
     <div class="lastFooter">
       <div class="lastFooter_item">
         <a
           href="
-      "
+    "
           ><img
             src="https://scontent.fhan3-5.fna.fbcdn.net/v/t39.30808-6/323424827_861826838301879_6405818623653207068_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=4M2yw-an8GwAX9yDtHX&_nc_ht=scontent.fhan3-5.fna&oh=00_AfCccBi7g7L6pwYuLy_cnYlLye-Rye6iTiL1SRcQfD9r3g&oe=63BE9320"
             alt=""
@@ -58,7 +60,7 @@
           /></a>
           <a
             href="
-          "
+        "
           >
             <img
               src="https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-6/323889234_1221876998402679_129557945902522209_n.jpg?stp=cp0_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=COq5agwR9acAX-v2vMZ&_nc_ht=scontent.fhan3-4.fna&oh=00_AfCCoEzB_gVwj4Kptrvp5g8UuLFIes1yB18U0gHYylJp5Q&oe=63BE4FF4"
@@ -66,7 +68,7 @@
           /></a>
           <a
             href="
-     "
+   "
           >
             <img
               src="https://scontent.fhan3-5.fna.fbcdn.net/v/t39.30808-6/322719202_642637407617016_2698550113727388789_n.jpg?stp=cp0_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=VlstWz2q-N0AX_SfbZS&_nc_oc=AQm-3yBmbwqEdxKEDDFndwS9Y5FndyGMfa8KLaJTHzuuPH0Q0y608rTAUkUTb6f7qFw&_nc_ht=scontent.fhan3-5.fna&oh=00_AfBASVoBWz_MsEpeJcQnIxP0BwxwF34vUeT0j6-bZXXg5Q&oe=63BFB904"
@@ -74,7 +76,7 @@
           /></a>
           <a
             href="
-       "
+     "
             ><img
               src="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-6/322871278_1112734736059295_208825546319577410_n.jpg?stp=cp0_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=eX9sPeI-pAEAX_DLDpb&_nc_ht=scontent.fhan3-1.fna&oh=00_AfD_MlBS3lM4D-6uc1grwzjdPpEOgKkbJ-MYc1iJgRbDeg&oe=63BF1646"
               alt=""
@@ -169,6 +171,7 @@
         font-size: 16px;
         line-height: 150%;
       }
+
       .lastFooter {
         margin-top: 114px;
         padding: 38px 60px;
@@ -195,14 +198,15 @@
       @media only screen and (max-width: 600px) {
         .footerCustom {
           width: 100vw;
-          display: unset;
+          display: flex;
+          flex-direction: column-reverse;
         }
         .itemFooter {
           width: 100%;
           margin-left: 0;
         }
         .arrayColumn {
-          justify-content: space-between;
+          justify-content: space-around;
         }
         .itemFooter h3 {
           text-align: center;
@@ -212,9 +216,16 @@
         }
         .btnFooter button {
           margin-top: 20px;
+          margin-left: 0;
         }
         .itemFooter p {
           text-align: center;
+        }
+        .textExplant_Footer {
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
         }
         .lastFooter {
           margin-top: 50px;
