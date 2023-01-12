@@ -1,0 +1,66 @@
+<h1 class="textName_Team">Nicholas Jenkins</h1>
+    <style>
+      .textName_Team {
+        color: #141416;
+        line-height: 150%;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .ft__half {
+        justify-content: center;
+      }
+      .ft__half:last-child {
+        justify-content: center;
+      }
+      .ft--twoBg .ft__half,
+      .ft__half.pdx {
+        padding-right: 0;
+      }
+      @media only screen and (max-width: 600px) {
+        #titles_Team {
+          padding: 0 !important;
+        }
+        .section.dark .color-1,
+        .theme--dark .color-1 {
+          text-align: center;
+        }
+        .ft--right {
+          padding: 10px;
+        }
+        .ft__wrapper {
+          padding: 0;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          padding: 10px;
+        }
+        .ftPoint__description p {
+          width: unset;
+          font-size: 16px;
+          line-height: unset;
+        }
+        .ft:not(.ft--right):not(.ft--noPdx) .ft__half:last-child {
+          padding-top: 0;
+        }
+        .ftPoint__meta {
+          max-width: unset;
+        }
+        .ftPoint {
+          display: flex;
+          justify-content: center;
+        }
+        .ft__half .pdxItem {
+          width: 100%;
+        }
+        .pdxItem--img-solid > img,
+        .pdxItem--img-transparent > img {
+          width: 100%;
+        }
+        .textDetail_Team {
+          width: unset !important;
+          line-height: unset !important;
+          font-size: 14px !important;
+          text-align: justify !important;
+        }
+      }
+    </style>
