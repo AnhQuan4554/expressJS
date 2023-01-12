@@ -1,428 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="pageTeam">
-      <div class="iteamPageTeamRight">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/8nx1bjcb84yj5y3d.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Nicholas Jenkins</div>
-          <div class="inforDetail_position">CEO, Founder</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Language Confidence is Nick’s third startup, with 1 exit and 1
-              failure. His passion for education stems from a family of
-              educators. Nick has lived in China, Singapore, Malaysia and London
-              and speaks English and intermediate Mandarin. Nick has a TESOL
-              qualification and was an English teacher in China between his
-              second startup and Language Confidence.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight reverse">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/rc3y0mtd90wenlwd.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Swahn Fraye</div>
-          <div class="inforDetail_position">CTO, Co-Founder</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Swahn completed an undergraduate in computer science and
-              multimedia. Swahn is ex-Atlassian and a self-taught whizz at
-              anything AI, infrastructure and audio technologies. Swahn loves
-              fishing and is originally from New Caledonia and speaks fluent
-              French and English.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/mz7xzpysw75b93mp.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Marco Sentinelli</div>
-          <div class="inforDetail_position">Chief Operating Officer</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Marco has been living and working in more than 10 different
-              countries; has launched 2 start-ups, spent almost 20 years in
-              corporates and SMEs, up to CEO and CMO positions; he held teaching
-              positions at Universities and he is a published author. Marco
-              loves diving and football; he is originally from Italy and speaks
-              Italian, English, French, Spanish, German and few other basic
-              level languages.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight reverse">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/mw2kizjj38qixv9y.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Vishal Kumar</div>
-          <div class="inforDetail_position">
-            Vice President – Sales, India & South, Asia
-          </div>
-          <div class="inforDetail_cotent">
-            <p>
-              Meet the guy who loves making education go viral – Vishal
-              Kumar!Vishal has a shared passion for education and IT, stemming
-              from a life-long obsession with offering training solutions with
-              modern technology. Vishal has a successful track record of driving
-              brand growth, delivering financial performance and maximising
-              operational excellence, as seen by the past 22 years of
-              professional success in multiple MNCs. He has excelled in many
-              executive positions including Training Head (India), Director,
-              Vice President positions by scaling and optimising business
-              portfolios, delivering key outcomes, building world-class
-              sales/product teams and rapid adaption to changing environments.
-              Vishal loves reading and travelling as much as he can and his
-              favourite saying is, as any true biker would say, “Just start off
-              and then the adventure carries you away”.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/uetj6yvt2a99sytm.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Jeffrey Wardman</div>
-          <div class="inforDetail_position">
-            Senior Machine Learning Engineer
-          </div>
-          <div class="inforDetail_cotent">
-            <p>
-              Jeffrey is an ML scientist/engineer with over five years of
-              experience in research and startup environments, working in
-              astrodynamics, medical imaging and now language teaching. He loves
-              football and being around the ocean.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight reverse">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/65jqhvm31ps4eyl0.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Abby del Castillo</div>
-          <div class="inforDetail_position">Machine Learning Engineer</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Abby has worked with several startups in the past focusing on the
-              development of Computer Vision and Natural Language Processing
-              applications. She volunteers in teaching Python and Scratch to
-              students and speaks in tech events to talk about AI. Abby
-              currently resides in the Philippines and can speak both Filipino
-              and English. She’d love to travel the world someday to meet new
-              people and learn more about their culture.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/r19sp5bbwh4cs8lw.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Rishabh Choudhary</div>
-          <div class="inforDetail_position">Machine Learning Engineer</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Rishabh graduated with a Master’s in Information Technology from
-              the University of New South Wales. He’s passionate about solving
-              real-world problems using artificial intelligence that creates a
-              positive impact on society. He is a die-hard Manchester United fan
-              and would love to see them play in real life. He is a big sucker
-              for good movies or tv series and is constantly on the lookout for
-              some good content. As a stress-buster activity, he likes to do
-              yoga and go for long walks and can speak fluent English and Hindi.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="iteamPageTeamRight reverse">
-        <div class="wrapAvatar">
-          <img
-            class="avatar"
-            src="https://files.umso.co/lib_MhVztoOVpWskisWc/l0evbfwck3dw2cdc.png?w=280&h=200"
-            alt=""
-          />
-        </div>
-        <div class="inforDetail">
-          <div class="inforDetail_name">Bac Nguyen</div>
-          <div class="inforDetail_position">Machine Learning Engineer</div>
-          <div class="inforDetail_cotent">
-            <p>
-              Bac joins LC as a physicist-turned Machine Learning Engineer. He
-              believes education is the best path to reduce human suffering and
-              learning English is the very first step. He spends his time
-              enjoying a nomadic lifestyle in Southern Vietnam, moving between
-              the mountains and coast to follow the cool seasons. In his spare
-              time Bac meditates, reads and learns about science.
-            </p>
-          </div>
-          <div class="arrayIconTeam">
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/ooboeadnrhftb7fl.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/d7n8q1qvpuicgs43.png?w=280&h=200"
-              alt=""
-            />
-            <img
-              src="https://files.umso.co/lib_MhVztoOVpWskisWc/nelt48qxfg001qhv.png?w=280&h=200"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+ <h1 class="textName_Team">Nicholas Jenkins</h1>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .wr{
-        
-      }
-      .pageTeam {
-        width: 100vw;
-      }
-      .iteamPageTeamRight {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 120px;
-        margin-bottom: 150px;
-      }
-      .iteamPageTeamRight.reverse {
-        flex-direction: row-reverse;
-      }
-      .iteamPageTeamRight.reverse .wrapAvatar {
-        margin-left: 20px;
-      }
-      .avatar {
-        width: 519px;
-        height: 474px;
-      }
-      .inforDetail_name {
-        color: #141416;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 150%;
-      }
-      .inforDetail_position {
-        color: #3ba09e;
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 32px;
-      }
-      .inforDetail_cotent p {
-        color: #353945;
-        font-family: "Inter";
+      .textOurStory_Team {
+        font-size: 14px;
+        color: #667085;
+        font-family: "SF Pro";
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 32px;
-        width: 601px;
+        font-size: 16px;
+        line-height: 24px;
+        width: 574px;
       }
-      .arrayIconTeam {
-        margin-top: 26px;
+      .textName_Team {
+        color: #141416;
+        line-height: 150%;
+        font-weight: 700;
+        font-size: 24px;
       }
-      .arrayIconTeam img {
-        margin-right: 20px;
+      .ft__half {
+        justify-content: center;
+      }
+      .ft__half:last-child {
+        justify-content: center;
+      }
+      .ft--twoBg .ft__half,
+      .ft__half.pdx {
+        padding-right: 0;
       }
       @media only screen and (max-width: 600px) {
-        .iteamPageTeamRight {
-          display: unset;
+        #titles_Team {
+          padding: 0 !important;
         }
-        .wrapAvatar {
-          width: 100vw;
+        .textOurStory_Team {
+          width: unset;
+          text-align: justify;
+        }
+        .section.dark .color-1,
+        .theme--dark .color-1 {
+          text-align: center;
+        }
+        .ft--right {
+          padding: 10px;
+        }
+        .ft__wrapper {
+          padding: 0;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          padding: 10px;
+        }
+        .ftPoint__description p {
+          width: unset;
+          font-size: 16px;
+          line-height: unset;
+        }
+        .ft:not(.ft--right):not(.ft--noPdx) .ft__half:last-child {
+          padding-top: 0;
+        }
+        .ftPoint__meta {
+          max-width: unset;
+        }
+        .ftPoint {
           display: flex;
           justify-content: center;
-          margin-left: 0;
-          margin-right: 0;
         }
-        .avatar {
-          width: 260px;
-          height: 237px;
-          margin-bottom: 20px;
-          margin-left: 0;
-          margin-right: 0;
+        .ft__half .pdxItem {
+          width: 100%;
         }
-        .inforDetail {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .pdxItem--img-solid > img,
+        .pdxItem--img-transparent > img {
+          width: 100%;
         }
-        .inforDetail_cotent p {
-          width: unset;
-          font-size: 16px;
-          line-height: unset;
+        .textDetail_Team {
+          padding: 0 10px;
+          width: unset !important;
+          line-height: unset !important;
+          font-size: 14px !important;
+          text-align: justify !important;
         }
       }
-      @media only screen and (min-width: 601px) and (max-width: 1440px) {
-        .iteamPageTeamRight {
-          padding: 0 20px;
+      @media only screen and (min-width: 601px) and (max-width: 768px) {
+        #titles_Team {
+          padding: 0 !important;
         }
-        .avatar {
-          width: 475px;
-          height: 428px;
-          margin-right: 40px;
+        .ft__half:last-child {
+          padding-top: 0;
         }
-        .inforDetail_cotent p {
+        .textOurStory_Team {
+          width: unset;
+          text-align: justify;
+          font-size: 12px;
+        }
+        .section.dark .color-1,
+        .theme--dark .color-1 {
+          text-align: center;
+        }
+        .ft--right {
+          padding: 10px;
+        }
+        .ft__wrapper {
+          padding: 0;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          padding: 10px;
+        }
+        .ftPoint__description p {
           width: unset;
           font-size: 16px;
           line-height: unset;
-          padding-right: 100px;
+        }
+        .pdxItem--img-solid > img,
+        .pdxItem--img-transparent > img {
+          padding: 0 10px;
+          padding-left: 0;
+        }
+
+        .ft:not(.ft--right):not(.ft--noPdx) .ft__half:last-child {
+          padding-top: 0;
+        }
+        .ftPoint__meta {
+          max-width: unset;
+        }
+        .ftPoint {
+          display: flex;
+          justify-content: center;
+        }
+        .ft__half .pdxItem {
+          width: 100%;
+        }
+        .pdxItem--img-solid > img,
+        .pdxItem--img-transparent > img {
+          width: 100%;
+        }
+        .textDetail_Team {
+          width: unset !important;
+          line-height: unset !important;
+          font-size: 14px !important;
+          text-align: justify !important;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          height: 100%;
+        }
+      }
+      @media only screen and (min-width: 780px) and (max-width: 1050px) {
+        .textOurStory_Team {
+          width: unset !important;
+          margin-left: 30px;
+        }
+        .ft__half {
+          padding: 0;
+          padding-left: 14px;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          padding: 0;
+        }
+        .section.dark .color-1,
+        .theme--dark .color-1 {
+          margin-left: 30px;
+        }
+        .ftPoint__meta {
+          max-width: unset;
+        }
+        .textDetail_Team {
+          width: unset !important;
+          line-height: unset !important;
+        }
+        .pdxItem pdxItem--img-transparent {
+          height: 100%;
+        }
+        .ft--twoBg .ft__half,
+        .ft__half.pdx {
+          padding: 0 50px !important;
         }
       }
     </style>
-  </body>
-</html>
