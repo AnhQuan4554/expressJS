@@ -1,0 +1,76 @@
+<p class="contact_textBody">Mon-Fri from 8am to 5pm.</p>
+    <p class="contact_textBodyPrimary">Your Phone number</p>
+    <style>
+      .contact_textBody {
+        margin-bottom: 20px;
+        color: #667085;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .contact_textBodyPrimary {
+        color: #3ba09e;
+        text-align: center;
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      @media only screen and (max-width: 600px) {
+        .contact_textBody {
+          margin-bottom: 10px;
+        }
+        .contact_textBodyPrimary {
+          line-height: unset !important;
+        }
+        #contact_BodyIcon {
+          margin-top: -150px;
+        }
+        #contact_BodyIcon .wr {
+          padding: 0;
+        }
+      }
+      @media only screen and (min-width: 600px) {
+        #contact_BodyIcon {
+          margin-top: -120px;
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .contact_textBody {
+          font-size: 20px;
+          line-height: 120%;
+        }
+        .contact_textBodyPrimary {
+          line-height: 120%;
+          font-size: 20px;
+        }
+        #contact_BodyIcon .wr {
+          max-width: 1440px;
+          margin-top: -100px;
+        }
+        .icon.large {
+          width: 48px !important;
+          height: 48px !important;
+        }
+      }
+      @media only screen and (min-width: 1200px) {
+        .contact_textBody {
+          font-size: 20px;
+          margin-bottom: 10px !important;
+          line-height: 120%;
+        }
+        .contact_textBodyPrimary {
+          font-size: 20px;
+        }
+        #contact_BodyIcon .wr {
+          max-width: 1440px;
+          margin-top: -100px;
+        }
+        #contact_BodyIcon {
+          margin-top: -12px;
+        }
+        .icon.large {
+          width: 48px !important;
+          height: 48px !important;
+        }
+      }
+    </style>
